@@ -1,0 +1,222 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+	<form [formGroup]="form"  class="acessoeconta">
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>CNPJ</ion-label>
+			<ion-input type="text" formControlName="cnpj"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.cnpj.valid && (form.controls.cnpj.dirty || form.controls.cnpj.touched)" color="danger">
+			<div [hidden]="!form.controls.cnpj.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Nome fantasia</ion-label>
+			<ion-input type="text" formControlName="nomefantasia"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.nomefantasia.valid && (form.controls.nomefantasia.dirty || form.controls.nomefantasia.touched)" color="danger">
+			<div [hidden]="!form.controls.nomefantasia.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Ramo de atividade</ion-label>
+			<ion-input type="text" formControlName="ramoatividade"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.ramoatividade.valid && (form.controls.ramoatividade.dirty || form.controls.ramoatividade.touched)" color="danger">
+			<div [hidden]="!form.controls.ramoatividade.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Endereço</ion-label>
+			<ion-input type="text" formControlName="endereco"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.endereco.valid && (form.controls.endereco.dirty || form.controls.endereco.touched)" color="danger">
+			<div [hidden]="!form.controls.endereco.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Número</ion-label>
+			<ion-input type="text" formControlName="num"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.num.valid && (form.controls.num.dirty || form.controls.num.touched)" color="danger">
+			<div [hidden]="!form.controls.num.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Bairro</ion-label>
+			<ion-input type="text" formControlName="bairro"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.bairro.valid && (form.controls.bairro.dirty || form.controls.bairro.touched)" color="danger">
+			<div [hidden]="!form.controls.bairro.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>CEP</ion-label>
+			<ion-input type="text" formControlName="cep"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.cep.valid && (form.controls.cep.dirty || form.controls.cep.touched)" color="danger">
+			<div [hidden]="!form.controls.cep.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Cidade</ion-label>
+			<ion-input type="text" formControlName="cidade"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.cidade.valid && (form.controls.cidade.dirty || form.controls.cidade.touched)" color="danger">
+			<div [hidden]="!form.controls.cidade.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Telefone</ion-label>
+			<ion-input type="number" formControlName="fone1"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.fone1.valid && (form.controls.fone1.dirty || form.controls.fone1.touched)" color="danger">
+			<div [hidden]="!form.controls.fone1.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Telefone</ion-label>
+			<ion-input type="text" formControlName="fone2"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.fone2.valid && (form.controls.fone2.dirty || form.controls.fone2.touched)" color="danger">
+			<div [hidden]="!form.controls.fone2.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Celular</ion-label>
+			<ion-input type="text" formControlName="celular"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.celular.valid && (form.controls.celular.dirty || form.controls.celular.touched)" color="danger">
+			<div [hidden]="!form.controls.celular.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Site da empresa</ion-label>
+			<ion-input type="text" formControlName="siteempresa"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.siteempresa.valid && (form.controls.siteempresa.dirty || form.controls.siteempresa.touched)" color="danger">
+			<div [hidden]="!form.controls.siteempresa.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Horário atend. Segunda à Sexta</ion-label>
+			<ion-input type="text" formControlName="horarioatend1"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.horarioatend1.valid && (form.controls.horarioatend1.dirty || form.controls.horarioatend1.touched)" color="danger">
+			<div [hidden]="!form.controls.horarioatend1.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Horário atend. Sábado e feriados</ion-label>
+			<ion-input type="text" formControlName="horarioatend2"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.horarioatend2.valid && (form.controls.horarioatend2.dirty || form.controls.horarioatend2.touched)" color="danger">
+			<div [hidden]="!form.controls.horarioatend2.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+
+		<ion-item>
+			<ion-icon name="calendar" item-start></ion-icon>
+			<ion-label floating>Horário atend. Domingos</ion-label>
+			<ion-input type="text" formControlName="horarioatend3"></ion-input>
+		</ion-item>
+		<ion-item *ngIf="!form.controls.horarioatend3.valid && (form.controls.horarioatend3.dirty || form.controls.horarioatend3.touched)" color="danger">
+			<div [hidden]="!form.controls.horarioatend3.errors.required">
+				O campo é obrigatório
+			</div>
+		</ion-item>
+		<div>			
+			<ion-item>
+				<ion-icon name="calendar" item-start></ion-icon>
+				<ion-label floating>E-mail</ion-label>
+				<ion-input type="text" formControlName="email"></ion-input>
+			</ion-item>
+			<ion-item *ngIf="!form.controls.email.valid && (form.controls.email.dirty || form.controls.email.touched)" color="danger">
+				<div [hidden]="!form.controls.email.errors.required">
+					O campo é obrigatório
+				</div>
+			</ion-item>
+	
+			<ion-item>
+				<ion-icon name="calendar" item-start></ion-icon>
+				<ion-label floating>Senha</ion-label>
+				<ion-input type="text" formControlName="senha"></ion-input>
+			</ion-item>
+			<ion-item *ngIf="!form.controls.senha.valid && (form.controls.senha.dirty || form.controls.senha.touched)" color="danger">
+				<div [hidden]="!form.controls.senha.errors.required">
+					O campo é obrigatório
+				</div>
+			</ion-item>
+	
+			<ion-item>
+				<ion-icon name="calendar" item-start></ion-icon>
+				<ion-label floating>Conta</ion-label>
+				<ion-input type="text" formControlName="tipoconta"></ion-input>
+			</ion-item>
+			<ion-item *ngIf="!form.controls.cnpj.valid && (form.controls.tipoconta.dirty || form.controls.tipoconta.touched)" color="danger">
+				<div [hidden]="!form.controls.tipoconta.errors.required">
+					O campo é obrigatório
+				</div>
+			</ion-item>
+		</div>
+
+		<div padding>
+			<button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">
+			Salvar
+			</button>
+		</div>
+	</form>
+
+</ion-content>
+
+
+  

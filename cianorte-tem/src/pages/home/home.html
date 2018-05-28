@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="secondary" class="msg">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>CIANOTE-TEM</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="secondary" class="msg">
+    <ion-searchbar placeholder="Pesquisar categoria" [(ngModel)]="terms"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="kkk">
+
+  <ion-list no-lines>
+    <ion-item-sliding *ngFor="let categoria of categorias | async | categoriabusca : terms">
+
+      <button ion-item (click)="pega_id_lista()">
+        <ion-icon name="cart" item-start></ion-icon>
+        <h2>{{ categoria.name }}</h2>
+      </button>
+  
+
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="editaCategoria(categoria)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="removeCategoria(categoria.key)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options> 
+      
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>        
+    <img src="assets/imgs/bannerpromo.jpg">         
+  </ion-toolbar>
+</ion-footer>

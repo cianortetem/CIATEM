@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-title class="text_center">CIANORTE - TEM!</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <ion-list>
+    
+        <ion-img class="logo" width="100" height="100" src="assets/imgs/logoCianorteTem.png" alt="Logo do app"></ion-img>
+    
+        <ion-item id="teste">
+          <ion-label floating>E-mail</ion-label>
+          <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+        </ion-item>
+    
+        <button class="btnEntrar" (click)="criarConta(user)"  ion-button color="secondary" outline block round>
+          CRIAR CONTA
+        </button>
+        <button (click)="sair()" ion-button color="danger" round block>
+          CANCELAR
+        </button>
+      </ion-list>
+  </ion-content>
+  

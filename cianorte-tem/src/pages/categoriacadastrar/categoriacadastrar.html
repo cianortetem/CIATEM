@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{title}}</ion-title>
+    <!-- <ion-title>Cadastrar - categoria</ion-title> -->
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="form">
+      <ion-item>
+        <ion-label floating>Nome da categoria</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.name.valid && (form.controls.name.dirty || form.controls.name.touched)" color="danger">
+        <div [hidden]="!form.controls.name.errors.required">
+          O campo é obrigatório
+        </div>
+      </ion-item>
+  
+      <div padding>
+        <button color="secondary" ion-button block round outline type="submit" [disabled]="!form.valid" (click)="salvarCategoria()">
+          Salvar
+        </button>
+      </div>
+    </form>
+  </ion-content>
+  
