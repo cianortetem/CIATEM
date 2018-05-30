@@ -27,6 +27,7 @@ import { EmpresacadastrarPage } from '../pages/empresacadastrar/empresacadastrar
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { ResetsenhaPage } from '../pages/resetsenha/resetsenha';
+import { OfertacadastrarPage } from '../pages/ofertacadastrar/ofertacadastrar';
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ providers ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriaProvider } from '../providers/categoria/categoria';
 import { EmpresaProvider } from '../providers/empresa/empresa';
@@ -45,6 +46,7 @@ import { CategoriabuscaPipe } from '../pipes/categoriabusca/categoriabusca';
     EmpresacadastrarPage,
     LoginPage,
     ResetsenhaPage,
+    OfertacadastrarPage,
     CategoriabuscaPipe
   ],
   imports: [
@@ -64,7 +66,8 @@ import { CategoriabuscaPipe } from '../pipes/categoriabusca/categoriabusca';
     EmpresasPage,
     EmpresacadastrarPage,
     LoginPage,
-    ResetsenhaPage
+    ResetsenhaPage,
+    OfertacadastrarPage
   ],
   providers: [
     StatusBar,

@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { EmpresasPage } from '../pages/empresas/empresas';
 import { LoginPage } from '../pages/login/login';
 import { ResetsenhaPage } from '../pages/resetsenha/resetsenha';
+import { OfertacadastrarPage } from '../pages/ofertacadastrar/ofertacadastrar';
 
 @Component({
   templateUrl: 'app.html'
@@ -29,6 +30,7 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Categorias', component: CategoriasPage },
       { title: 'Empresas', component: EmpresasPage },
+      { title: 'Ofertas', component: OfertacadastrarPage },
       { title: 'Sair', component: LoginPage}
     ];
 
