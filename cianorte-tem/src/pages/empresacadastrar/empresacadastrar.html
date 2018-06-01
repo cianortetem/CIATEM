@@ -101,7 +101,7 @@
 		<ion-item>
 			<ion-icon name="calendar" item-start></ion-icon>
 			<ion-label floating>Telefone</ion-label>
-			<ion-input type="number" formControlName="fone1"></ion-input>
+			<ion-input type="text" formControlName="fone1"></ion-input>
 		</ion-item>
 		<ion-item *ngIf="!form.controls.fone1.valid && (form.controls.fone1.dirty || form.controls.fone1.touched)" color="danger">
 			<div [hidden]="!form.controls.fone1.errors.required">
@@ -114,32 +114,17 @@
 			<ion-label floating>Telefone</ion-label>
 			<ion-input type="text" formControlName="fone2"></ion-input>
 		</ion-item>
-		<ion-item *ngIf="!form.controls.fone2.valid && (form.controls.fone2.dirty || form.controls.fone2.touched)" color="danger">
-			<div [hidden]="!form.controls.fone2.errors.required">
-				O campo é obrigatório
-			</div>
-		</ion-item>
 
 		<ion-item>
 			<ion-icon name="calendar" item-start></ion-icon>
 			<ion-label floating>Celular</ion-label>
 			<ion-input type="text" formControlName="celular"></ion-input>
 		</ion-item>
-		<ion-item *ngIf="!form.controls.celular.valid && (form.controls.celular.dirty || form.controls.celular.touched)" color="danger">
-			<div [hidden]="!form.controls.celular.errors.required">
-				O campo é obrigatório
-			</div>
-		</ion-item>
 
 		<ion-item>
 			<ion-icon name="calendar" item-start></ion-icon>
 			<ion-label floating>Site da empresa</ion-label>
 			<ion-input type="text" formControlName="siteempresa"></ion-input>
-		</ion-item>
-		<ion-item *ngIf="!form.controls.siteempresa.valid && (form.controls.siteempresa.dirty || form.controls.siteempresa.touched)" color="danger">
-			<div [hidden]="!form.controls.siteempresa.errors.required">
-				O campo é obrigatório
-			</div>
 		</ion-item>
 
 		<ion-item>
@@ -158,21 +143,11 @@
 			<ion-label floating>Horário atend. Sábado e feriados</ion-label>
 			<ion-input type="text" formControlName="horarioatend2"></ion-input>
 		</ion-item>
-		<ion-item *ngIf="!form.controls.horarioatend2.valid && (form.controls.horarioatend2.dirty || form.controls.horarioatend2.touched)" color="danger">
-			<div [hidden]="!form.controls.horarioatend2.errors.required">
-				O campo é obrigatório
-			</div>
-		</ion-item>
 
 		<ion-item>
 			<ion-icon name="calendar" item-start></ion-icon>
 			<ion-label floating>Horário atend. Domingos</ion-label>
 			<ion-input type="text" formControlName="horarioatend3"></ion-input>
-		</ion-item>
-		<ion-item *ngIf="!form.controls.horarioatend3.valid && (form.controls.horarioatend3.dirty || form.controls.horarioatend3.touched)" color="danger">
-			<div [hidden]="!form.controls.horarioatend3.errors.required">
-				O campo é obrigatório
-			</div>
 		</ion-item>
 		<div>			
 			<ion-item>

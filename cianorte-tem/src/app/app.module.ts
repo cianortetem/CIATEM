@@ -32,6 +32,11 @@ import { CategoriaProvider } from '../providers/categoria/categoria';
 import { EmpresaProvider } from '../providers/empresa/empresa';
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ pipes ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriabuscaPipe } from '../pipes/categoriabusca/categoriabusca';
+import { OfertaPage } from '../pages/oferta/oferta';
+import { OfertacadastrarPage } from '../pages/ofertacadastrar/ofertacadastrar';
+import { OfertaProvider } from '../providers/oferta/oferta';
+import { OfertaPipe } from '../pipes/oferta/oferta';
+import { EmpresaPipe } from '../pipes/empresa/empresa';
 
 
 @NgModule({
@@ -45,7 +50,11 @@ import { CategoriabuscaPipe } from '../pipes/categoriabusca/categoriabusca';
     EmpresacadastrarPage,
     LoginPage,
     ResetsenhaPage,
-    CategoriabuscaPipe
+    OfertaPage,
+    OfertacadastrarPage,
+    CategoriabuscaPipe,
+    OfertaPipe,
+    EmpresaPipe
   ],
   imports: [
     BrowserModule,
@@ -64,6 +73,8 @@ import { CategoriabuscaPipe } from '../pipes/categoriabusca/categoriabusca';
     EmpresasPage,
     EmpresacadastrarPage,
     LoginPage,
+    OfertaPage,
+    OfertacadastrarPage,
     ResetsenhaPage
   ],
   providers: [
@@ -73,7 +84,8 @@ import { CategoriabuscaPipe } from '../pipes/categoriabusca/categoriabusca';
       provide: ErrorHandler,
       useClass: IonicErrorHandler},
       CategoriaProvider,
-      EmpresaProvider
+      EmpresaProvider,
+      OfertaProvider
   ]
 })
 export class AppModule {}

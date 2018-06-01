@@ -3,8 +3,6 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { CategoriaProvider } from './../../providers/categoria/categoria';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-
-
 @IonicPage()
 @Component({
   selector: 'page-categoriacadastrar',

@@ -1,0 +1,221 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <!-- <form>
+    Descrição da OFERTA:<br>
+    <input type="text" name="descOferta" size="35"><br>
+      <ion-card>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/imgs/cianorte.jpg">
+          </ion-avatar>
+          <h2>Produto:</h2>
+          <p>Data oferta</p>
+        </ion-item>
+        <img src="assets/imgs/cianorte.jpg">
+      
+        <ion-card-content>
+          <p>OBS</p>
+        </ion-card-content>
+      
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>bla bla bla</div>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      
+      <ion-icon ios="ios-search" md="md-search"></ion-icon>
+      Imagem
+      <input type="text" name="firstname" size="30">
+      <ion-icon ios="ios-camera" md="md-camera"></ion-icon><br>
+      Preço
+      <input type="text" name="firstname"> <br>
+      Item
+      <input type="text" name="firstname">
+   
+    <button (click)="loginPage()" ion-button color="success" round block>
+        CRIAR ANUNCIO
+    </button>
+    <button (click)="loginPage()" ion-button color="danger" round block>
+          CANCELAR
+    </button>
+  </form> -->
+
+  <!-- <form [formGroup]="form">
+      <ion-item>
+        <ion-icon name="list-box" item-start></ion-icon>
+        <ion-label stacked>Descrição</ion-label>
+        <ion-input type="text" formControlName="descricao"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.descricao.valid && (form.controls.descricao.dirty || form.controls.descricao.touched)" color="danger">
+        <div [hidden]="!form.controls.descricao.errors.required">
+          O campo é obrigatório
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="calendar" item-start></ion-icon>
+        <ion-label stacked>Data da oferta</ion-label>
+        <ion-input type="text" formControlName="dataoferta"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.dataoferta.valid && (form.controls.dataoferta.dirty || form.controls.dataoferta.touched)" color="danger">
+        <div [hidden]="!form.controls.dataoferta.errors.required">
+          O campo é obrigatório
+        </div>
+      </ion-item>
+      
+      <ion-item>
+        <ion-icon name="alert" item-start></ion-icon>
+        <ion-label stacked>Obs</ion-label>
+        <ion-input type="text" formControlName="obs"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.obs.valid && (form.controls.obs.dirty || form.controls.obs.touched)" color="danger">
+        <div [hidden]="!form.controls.obs.errors.required">
+          O campo é obrigatório
+        </div>
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon name="images" item-start></ion-icon>
+        <ion-label stacked>Imagem</ion-label>
+        <ion-input type="text" formControlName="imagem"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.imagem.valid && (form.controls.imagem.dirty || form.controls.imagem.touched)" color="danger">
+        <div [hidden]="!form.controls.imagem.errors.required">
+          O campo é obrigatório
+        </div>
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon name="ios-cash" item-start></ion-icon>
+        <ion-label stacked>Preço</ion-label>
+        <ion-input type="text" formControlName="preco"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.preco.valid && (form.controls.preco.dirty || form.controls.preco.touched)" color="danger">
+        <div [hidden]="!form.controls.preco.errors.required">
+          O campo é obrigatório
+        </div>
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon name="create" item-start></ion-icon>
+        <ion-label stacked>Item</ion-label>
+        <ion-input type="text" formControlName="item"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.item.valid && (form.controls.item.dirty || form.controls.item.touched)" color="danger">
+        <div [hidden]="!form.controls.item.errors.required">
+          O campo é obrigatório
+        </div>
+      </ion-item>
+  
+      <div padding>
+        <button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">
+        Salvar
+        </button>
+      </div>
+    </form> -->
+
+    <form [formGroup]="form">
+      <ion-card>
+        <ion-card-content>
+          <ion-item>
+            <ion-label stacked>Descrição</ion-label>
+            <ion-input placeholder="Ex: Cerveja Brahma" type="text" formControlName="descricao"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!form.controls.descricao.valid && (form.controls.descricao.dirty || form.controls.descricao.touched)" color="danger">
+            <div [hidden]="!form.controls.descricao.errors.required">
+              O campo é obrigatório
+            </div>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Data da oferta</ion-label>
+            <ion-input placeholder="Ex: 10/10/2018" type="text" formControlName="dataoferta"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!form.controls.dataoferta.valid && (form.controls.dataoferta.dirty || form.controls.dataoferta.touched)" color="danger">
+            <div [hidden]="!form.controls.dataoferta.errors.required">
+              O campo é obrigatório
+            </div>
+          </ion-item>
+          <div id="imagem">
+            <img src="assets/imgs/logo.png"/>
+          </div>
+
+          <ion-item>
+            <ion-label stacked>Obsevação da oferta</ion-label>
+            <ion-input placeholder="Ex: 2 caixas por cliente" type="text" formControlName="obs"></ion-input>
+          </ion-item>
+          <ion-row>
+            <ion-col col-10>
+              <ion-item>
+                <!-- <ion-icon name="images" item-start></ion-icon> -->
+                <ion-label stacked>Imagem</ion-label>
+                <ion-input placeholder="Ex: Galeria de imagens" type="text" formControlName="imagem"></ion-input>
+              </ion-item>
+              <ion-item *ngIf="!form.controls.imagem.valid && (form.controls.imagem.dirty || form.controls.imagem.touched)" color="danger">
+                <div [hidden]="!form.controls.imagem.errors.required">
+                  O campo é obrigatório
+                </div>
+              </ion-item>
+            </ion-col>
+            <ion-col col-2>
+                <ion-buttons id="btnTirafoto">
+                  <button ion-button icon-only outline color="secondary">
+                    <ion-icon name="camera"></ion-icon>
+                  </button>
+                </ion-buttons>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label stacked>Preço</ion-label>
+                <ion-input placeholder="Ex: R$ 1.29" type="text" formControlName="preco"></ion-input>
+              </ion-item>
+              <ion-item *ngIf="!form.controls.preco.valid && (form.controls.preco.dirty || form.controls.preco.touched)" color="danger">
+                <div [hidden]="!form.controls.preco.errors.required">
+                  O campo é obrigatório
+                </div>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label stacked>Item</ion-label>
+                <ion-input placeholder="Ex: 350ml" type="text" formControlName="item"></ion-input>
+              </ion-item>
+              <ion-item *ngIf="!form.controls.item.valid && (form.controls.item.dirty || form.controls.item.touched)" color="danger">
+                <div [hidden]="!form.controls.item.errors.required">
+                  O campo é obrigatório
+                </div>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row id="botoes">
+            <ion-col>
+              <div>
+                <button class="btn" ion-button round color="secondary" type="submit" [disabled]="!form.valid" (click)="onSubmit()">
+                Salvar
+                </button>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+                <button class="btn" ion-button round color="danger">
+                  Cancelar
+                </button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>        
+    </form>  
+</ion-content>

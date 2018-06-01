@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons start>
+      <button ion-button icon-only color="danger" (click)="homePage()">
+          <ion-icon name="md-power"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Ofertas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list no-lines>
+    <ion-card *ngFor="let oferta of ofertas | async">
+      <ion-card-header>
+        <ion-row>
+          <ion-col id="dataofertap">
+            Oferta válida para:
+          </ion-col>
+          <ion-col id="dataoferta">
+            {{ oferta.dataoferta }}
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+        <img src="assets/imgs/logo.png"/>
+          
+      <ion-card-content>
+        <ion-card-title>
+          <ion-row>
+              <ion-col id="descricao">
+                <h1>{{ oferta.descricao }}</h1>
+              </ion-col>
+            </ion-row>
+        </ion-card-title>
+        <ion-row>
+          <ion-col id="preco">
+            {{oferta.preco}}
+          </ion-col>
+          <ion-col id="obs">
+            <ion-note>
+              {{oferta.item}}
+            </ion-note>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col id="item">
+              <ion-note>
+                {{oferta.obs}}
+              </ion-note>
+            </ion-col>
+          </ion-row>
+      </ion-card-content>
+
+      <ion-item-sliding>
+        <ion-item>
+         
+          <button ion-button icon-left clear item-start id="btnWhatsapp">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+            Whatsapp
+          </button>
+
+          <button ion-button icon-left clear item-end id="btnInstagram">
+            <ion-icon name="logo-instagram"></ion-icon>
+            Instagram
+          </button>
+
+        </ion-item>
+      
+        <ion-item-options side="left">
+          <button ion-button color="secondary" (click)="editaOferta(oferta)">
+            <ion-icon name="create"></ion-icon>
+          </button>
+        </ion-item-options>
+          
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="removeOferta(oferta.key)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-card>  
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="novaOferta()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
