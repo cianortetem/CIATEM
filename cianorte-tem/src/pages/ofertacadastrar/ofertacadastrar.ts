@@ -1,19 +1,7 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { OfertaProvider } from './../../providers/oferta/oferta';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-=======
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LoginPage } from '../login/login';
-
-/**
- * Generated class for the OfertacadastrarPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
->>>>>>> d9889830ca63872d343338ed3f9d5371054c5a68
 
 @IonicPage()
 @Component({
@@ -21,7 +9,6 @@ import { LoginPage } from '../login/login';
   templateUrl: 'ofertacadastrar.html',
 })
 export class OfertacadastrarPage {
-<<<<<<< HEAD
 	
   title: string;
 	form: FormGroup;
@@ -70,19 +57,4 @@ export class OfertacadastrarPage {
   	}
   }
 
-=======
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad OfertacadastrarPage');
-  }
-
-    loginPage(){
-      // this.afAuth.auth.signOut();
-      this.navCtrl.setRoot(LoginPage);
-    }
-  
->>>>>>> d9889830ca63872d343338ed3f9d5371054c5a68
 }
