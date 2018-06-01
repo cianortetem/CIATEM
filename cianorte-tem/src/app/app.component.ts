@@ -10,7 +10,10 @@ import { HomePage } from '../pages/home/home';
 import { EmpresasPage } from '../pages/empresas/empresas';
 import { LoginPage } from '../pages/login/login';
 import { ResetsenhaPage } from '../pages/resetsenha/resetsenha';
+<<<<<<< HEAD
 import { OfertaPage } from '../pages/oferta/oferta';
+=======
+>>>>>>> d9889830ca63872d343338ed3f9d5371054c5a68
 import { OfertacadastrarPage } from '../pages/ofertacadastrar/ofertacadastrar';
 
 @Component({
@@ -31,7 +34,11 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Categorias', component: CategoriasPage },
       { title: 'Empresas', component: EmpresasPage },
+<<<<<<< HEAD
       { title: 'Ofertas', component: OfertaPage },
+=======
+      { title: 'Ofertas', component: OfertacadastrarPage },
+>>>>>>> d9889830ca63872d343338ed3f9d5371054c5a68
       { title: 'Sair', component: LoginPage}
     ];
 

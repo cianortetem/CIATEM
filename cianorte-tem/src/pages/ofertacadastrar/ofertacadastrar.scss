@@ -1,5 +1,6 @@
 page-ofertacadastrar {
     ion-content{
+<<<<<<< HEAD
         background: rgba(9, 110, 110, 0.747) !important;
     }
     ion-label{
@@ -36,5 +37,44 @@ page-ofertacadastrar {
     #btnTirafoto{
         margin-top: 20px;
     }
+=======
+        // background: #DEDEDE !important;
+        padding: 0px 0px !important;
+        margin: 0px 0px !important;
+      }
+      .btnEntrar{
+        margin-top: 50px !important;
+        margin-bottom: 15px !important;
+      }
+      button{
+        height: 45px !important
+      }
+    
+      .text_center{
+        text-align: center !important;
+      }
+      ion-img{
+        display: block;
+        margin: auto !important;
+        background: #FFF !important;
+        margin-Top: 30px !important;
+        bottom: 30px !important;
+      }
+      ion-toggle{
+        margin-top: 0px !important;
+        border: none !important;
+      }
+      form{
+        background: rgba(9, 110, 110, 0.747) !important;
+        color: #FFF !important;
+        font-weight: bold !important;
+        
+      }
+
+      input{
+        margin-left: 10px !important;
+
+      }
+>>>>>>> d9889830ca63872d343338ed3f9d5371054c5a68
 }
     
