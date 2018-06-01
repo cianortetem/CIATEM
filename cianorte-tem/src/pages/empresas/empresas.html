@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons start>
+      <button ion-button icon-only color="danger" (click)="homePage()">
+          <ion-icon name="md-power"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Empresas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list no-lines>
+    <ion-item-sliding *ngFor="let empresa of empresas | async">
+
+      <button ion-item>
+        <ion-icon name="cart" item-start></ion-icon>
+        <h2>{{ empresa.nomefantasia }}</h2>
+      </button>
+
+      <ion-item-options side="left">
+        <button ion-button color="secondary" (click)="editaEmpresa(empresa)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="removeEmpresa(empresa.key)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+      
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="novaEmpresa()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
