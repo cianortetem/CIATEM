@@ -1,3 +1,29 @@
+$ok: !important;
 page-empresacadastrar {
+    ion-content{
+        background: rgba(9, 110, 110, 0.747) $ok;
+    }
+    .acessoeconta{
+        background:  rgba(9, 110, 110, 0.747) $ok;
+    }
+    ion-label{
+        font-size: 16px $ok;
+        // color: #FAa000 $ok;
+    }
+    ion-item{
+        margin-left: -15px $ok;
+    }
+    ion-card-content{
+        width: 107% $ok;
 
+    }
+    .card-header-md {
+        width: 116%;
+        margin-left: -16px;
+        & ion-item{
+            padding-right: 17px $ok;
+        }
+    }
+
+    
 }

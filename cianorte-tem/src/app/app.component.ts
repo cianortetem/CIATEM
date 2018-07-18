@@ -12,14 +12,15 @@ import { LoginPage } from '../pages/login/login';
 import { ResetsenhaPage } from '../pages/resetsenha/resetsenha';
 import { OfertaPage } from '../pages/oferta/oferta';
 import { OfertacadastrarPage } from '../pages/ofertacadastrar/ofertacadastrar';
+import { FotosPage } from '../pages/fotos/fotos';
 
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class cianortetem {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -33,6 +34,7 @@ export class MyApp {
       { title: 'Empresas', component: EmpresasPage },
       { title: 'Ofertas', component: OfertaPage },
       { title: 'Ofertas', component: OfertacadastrarPage },
+      { title: 'Fotos', component: FotosPage },
       { title: 'Sair', component: LoginPage}
     ];
 

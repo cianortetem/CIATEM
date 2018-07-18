@@ -1,12 +1,19 @@
 import { Injectable} from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Storage } from '@ionic/storage';
+import { DatePipe } from '@angular/common';
 
 @Injectable()
 export class OfertaProvider {
 
 	private PATH = 'ofertas/';
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(
+	  	private db: AngularFireDatabase,
+		private storage: Storage,
+	 	private datepipe: DatePipe) { 
+
+		 }
 
   getAll(){
   	return this.db.list(this.PATH)
@@ -55,6 +62,16 @@ export class OfertaProvider {
   }
   remove(key: string){
   	return this.db.list(this.PATH).remove(key);
+  }
+
+  salvafoto(item: any){{
+	  let oferta = {$key: item.key, descricao: item.descricao, url:'', fullPath:''};
+
+	  if(oferta.$key){
+		  this.save(oferta);
+	  }
+  }
+
   }
 
 }

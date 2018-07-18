@@ -1,9 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, Img } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { IonMaskModule } from '@pluritech/ion-mask';
+import { Camera } from '@ionic-native/camera';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { DatePipe } from '@angular/common';
+import { IonicStorageModule } from '@ionic/storage';
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ firebase ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -18,7 +22,7 @@ const firebaseConfig = {
       messagingSenderId: "33292307332"
     };
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ pages  ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
-import { MyApp } from './app.component';
+import { cianortetem } from './app.component';
 import { CadastrarusuarioPage } from '../pages/cadastrarusuario/cadastrarusuario';
 import { CategoriasPage } from '../pages/categorias/categorias';
 import { CategoriacadastrarPage } from '../pages/categoriacadastrar/categoriacadastrar';
@@ -29,19 +33,24 @@ import { LoginPage } from '../pages/login/login';
 import { ResetsenhaPage } from '../pages/resetsenha/resetsenha';
 import { OfertaPage } from '../pages/oferta/oferta';
 import { OfertacadastrarPage } from '../pages/ofertacadastrar/ofertacadastrar';
+import { FotosPage } from '../pages/fotos/fotos';
+
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ providers ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriaProvider } from '../providers/categoria/categoria';
 import { EmpresaProvider } from '../providers/empresa/empresa';
 import { OfertaProvider } from '../providers/oferta/oferta';
+import { FotosProvider } from '../providers/fotos/fotos';
+
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ pipes ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriabuscaPipe } from '../pipes/categoriabusca/categoriabusca';
 import { OfertaPipe } from '../pipes/oferta/oferta';
 import { EmpresaPipe } from '../pipes/empresa/empresa';
+import { AuthProvider } from '../providers/auth/auth';
 
 
 @NgModule({
   declarations: [
-    MyApp,
+    cianortetem,
     CadastrarusuarioPage,
     CategoriasPage,
     CategoriacadastrarPage,
@@ -54,18 +63,21 @@ import { EmpresaPipe } from '../pipes/empresa/empresa';
     OfertacadastrarPage,
     CategoriabuscaPipe,
     OfertaPipe,
-    EmpresaPipe
+    EmpresaPipe,
+    FotosPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(cianortetem),
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    IonMaskModule.forRoot(),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    cianortetem,
     CadastrarusuarioPage,
     CategoriasPage,
     CategoriacadastrarPage,
@@ -75,7 +87,8 @@ import { EmpresaPipe } from '../pipes/empresa/empresa';
     LoginPage,
     OfertaPage,
     OfertacadastrarPage,
-    ResetsenhaPage
+    ResetsenhaPage,
+    FotosPage
   ],
   providers: [
     StatusBar,
@@ -85,7 +98,12 @@ import { EmpresaPipe } from '../pipes/empresa/empresa';
       useClass: IonicErrorHandler},
       CategoriaProvider,
       EmpresaProvider,
-      OfertaProvider
+      OfertaProvider,
+      FotosProvider,
+      Camera,
+      AuthProvider,
+      ImagePicker,
+      DatePipe
   ]
 })
 export class AppModule {}
