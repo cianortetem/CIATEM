@@ -36,6 +36,7 @@ export class cianortetem {
       { title: 'Ofertas', component: OfertacadastrarPage },
       { title: 'Fotos', component: FotosPage },
       { title: 'Sair', component: LoginPage}
+      { title: 'Sair', component: LoginPage}
     ];
 
   }
