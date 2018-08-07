@@ -1,0 +1,7 @@
+{
+  "name": "guiaCidades",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
