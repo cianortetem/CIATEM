@@ -13,12 +13,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 //Configuração com o banco
 export const firebaseConfig = {
-  apiKey: "AIzaSyDNDP3I56S2iLpLUCM4tP4xY6JzcAcLZKw",
-  authDomain: "guia-cidades-d06cd.firebaseapp.com",
-  databaseURL: "https://guia-cidades-d06cd.firebaseio.com",
-  projectId: "guia-cidades-d06cd",
-  storageBucket: "guia-cidades-d06cd.appspot.com",
-  messagingSenderId: "805209577088"
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: ""
 }
 
 @NgModule({
