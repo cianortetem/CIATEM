@@ -40,7 +40,9 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    AngularFireDatabase,
+    //Facebook
   ]
 })
 export class AppModule {}
