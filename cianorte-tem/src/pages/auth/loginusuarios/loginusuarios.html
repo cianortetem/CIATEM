@@ -1,0 +1,36 @@
+<ion-header no-border>
+
+  <ion-navbar transparent>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+   <div class="login-container">
+    <form padding [formGroup]="loginForm" (submit)="login()" novalidate>
+      <ion-item>
+        <ion-input type="text" formControlname="email" placeholder="E-mail" clearInput clearOnEdit="false"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-input type="password" formControlname="password" placeholder="Senha" clearInput clearOnEdit="false"></ion-input>
+      </ion-item>
+        <button ion-button block outline color="ligth" [disabled]="!loginForm.valid" class="login-button">Login</button>
+    </form>
+    <br>
+    <div class="strike">
+      <span>OU</span>
+    </div>
+    <br>
+    <button ion-button icon-left block outline color="ligth" class="login-button" (click)="facebookLogin()">
+      <ion-icon name="logo-facebook"></ion-icon>Login Facebook
+    </button>
+    <br><br><br><br><br>
+
+    <div (click)="goToSignup()">
+      <span>Ainda não possui conta? <button ion-button block outline color="ligth" class="login-button">Cadastra-se</button></span>
+
+    </div>
+  </div>
+
+</ion-content>

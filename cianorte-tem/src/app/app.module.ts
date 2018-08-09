@@ -8,10 +8,12 @@ import { Camera } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { DatePipe } from '@angular/common';
 import { IonicStorageModule } from '@ionic/storage';
+
+
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ firebase ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 
 const firebaseConfig = {
       apiKey: "AIzaSyC6Sur7_cm6iWJhUKXbGLpqGnfPKxIVppA",
@@ -34,6 +36,8 @@ import { ResetsenhaPage } from '../pages/resetsenha/resetsenha';
 import { OfertaPage } from '../pages/oferta/oferta';
 import { OfertacadastrarPage } from '../pages/ofertacadastrar/ofertacadastrar';
 import { FotosPage } from '../pages/fotos/fotos';
+import { LoginusuariosPage } from '../pages/auth/loginusuarios/loginusuarios';
+//import { CadusuariosPage } from '../pages/auth/cadusuarios/cadusuarios';
 
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ providers ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriaProvider } from '../providers/categoria/categoria';
@@ -45,8 +49,7 @@ import { FotosProvider } from '../providers/fotos/fotos';
 import { CategoriabuscaPipe } from '../pipes/categoriabusca/categoriabusca';
 import { OfertaPipe } from '../pipes/oferta/oferta';
 import { EmpresaPipe } from '../pipes/empresa/empresa';
-import { AuthProvider } from '../providers/auth/auth';
-
+import { AuthProvider } from '../providers/auth/auth.1';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,7 @@ import { AuthProvider } from '../providers/auth/auth';
     CadastrarusuarioPage,
     CategoriasPage,
     CategoriacadastrarPage,
-    HomePage,
+    HomePage, 
     EmpresasPage,
     EmpresacadastrarPage,
     LoginPage,
@@ -63,8 +66,10 @@ import { AuthProvider } from '../providers/auth/auth';
     OfertacadastrarPage,
     CategoriabuscaPipe,
     OfertaPipe,
-    EmpresaPipe,
-    FotosPage
+    EmpresaPipe, 
+    FotosPage,
+    LoginusuariosPage,
+   //CadusuariosPage
   ],
   imports: [
     BrowserModule,
@@ -73,7 +78,7 @@ import { AuthProvider } from '../providers/auth/auth';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     IonMaskModule.forRoot(),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -88,7 +93,9 @@ import { AuthProvider } from '../providers/auth/auth';
     OfertaPage,
     OfertacadastrarPage,
     ResetsenhaPage,
-    FotosPage
+    FotosPage,
+    LoginusuariosPage,
+    //CadusuariosPage
   ],
   providers: [
     StatusBar,
@@ -103,7 +110,9 @@ import { AuthProvider } from '../providers/auth/auth';
       Camera,
       AuthProvider,
       ImagePicker,
-      DatePipe
+      DatePipe,
+      AngularFireDatabase,
+      //Facebook
   ]
 })
 export class AppModule {}

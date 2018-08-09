@@ -5,6 +5,8 @@ import { ResetsenhaPage } from '../resetsenha/resetsenha';
 import { CadastrarusuarioPage } from '../cadastrarusuario/cadastrarusuario';
 import { User } from "../../models/users";
 import { AngularFireAuth} from "angularfire2/auth";
+import { LoginusuariosPage } from '../auth/loginusuarios/loginusuarios';
+import { CadusuariosPage } from '../auth/cadusuarios/cadusuarios';
 
 @IonicPage()
 @Component({
@@ -28,7 +30,7 @@ export class LoginPage {
     try{
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       if(result){
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(LoginusuariosPage);
       }else{
         this.toastCtrl.create({
           message: 'Usuário ou senha inconrretos, tente novamente!',
@@ -46,7 +48,7 @@ export class LoginPage {
   }
 
   cadastrarUsuario(){
-      this.navCtrl.push(CadastrarusuarioPage);
+      this.navCtrl.push(LoginusuariosPage);
   }
 
 paginaHome(){

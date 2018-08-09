@@ -13,6 +13,8 @@ import { ResetsenhaPage } from '../pages/resetsenha/resetsenha';
 import { OfertaPage } from '../pages/oferta/oferta';
 import { OfertacadastrarPage } from '../pages/ofertacadastrar/ofertacadastrar';
 import { FotosPage } from '../pages/fotos/fotos';
+import { LoginusuariosPage } from '../pages/auth/loginusuarios/loginusuarios';
+import { CadusuariosPage } from '../pages/auth/cadusuarios/cadusuarios';
 
 @Component({
   templateUrl: 'app.html'
@@ -35,7 +37,7 @@ export class cianortetem {
       { title: 'Ofertas', component: OfertaPage },
       { title: 'Ofertas', component: OfertacadastrarPage },
       { title: 'Fotos', component: FotosPage },
-      { title: 'Sair', component: LoginPage}
+      { title: 'Sair', component: LoginPage},
     ];
 
   }
@@ -56,6 +58,6 @@ export class cianortetem {
   }
 
   sair(){
-    this.nav.setRoot(LoginPage);
+    this.nav.setRoot(LoginusuariosPage);
   }
 }
