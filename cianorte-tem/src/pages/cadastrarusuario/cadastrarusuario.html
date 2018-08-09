@@ -19,6 +19,10 @@
           <ion-label floating>Senha</ion-label>
           <ion-input type="password" [(ngModel)]="user.password"></ion-input>
         </ion-item>
+
+        <ion-item>
+          <ion-input type="password"  [(ngModel)]="user.passwordConfirmation" placeholder="Confirmação de senha" clearInput clearOnEdit="false"></ion-input>
+      </ion-item>
     
         <button class="btnEntrar" (click)="criarConta(user)"  ion-button color="secondary" outline block round>
           CRIAR CONTA
