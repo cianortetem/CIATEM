@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { HomePage } from '../home/home';
 import { EmpresaProvider } from '../../providers/empresa/empresa';
 import { EmpresacadastrarPage } from '../empresacadastrar/empresacadastrar';
+import { EmpresadetalhesPage } from '../empresadetalhes/empresadetalhes';
 
 
 @IonicPage()
@@ -42,6 +43,9 @@ export class EmpresasPage {
 
   homePage(){
    this.navCtrl.setRoot(HomePage);
+ }
+  empresasDetalhes(){
+   this.navCtrl.push(EmpresadetalhesPage);
  }
 
 }

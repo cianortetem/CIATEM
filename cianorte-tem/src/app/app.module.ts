@@ -38,6 +38,7 @@ import { OfertacadastrarPage } from '../pages/ofertacadastrar/ofertacadastrar';
 import { FotosPage } from '../pages/fotos/fotos';
 import { LoginusuariosPage } from '../pages/auth/loginusuarios/loginusuarios';
 //import { CadusuariosPage } from '../pages/auth/cadusuarios/cadusuarios';
+import { EmpresadetalhesPage } from '../pages/empresadetalhes/empresadetalhes';
 
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ providers ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriaProvider } from '../providers/categoria/categoria';
@@ -57,18 +58,19 @@ import { AuthProvider } from '../providers/auth/auth.1';
     CadastrarusuarioPage,
     CategoriasPage,
     CategoriacadastrarPage,
-    HomePage, 
     EmpresasPage,
     EmpresacadastrarPage,
+    EmpresadetalhesPage,
+    FotosPage,
+    HomePage, 
     LoginPage,
+    LoginusuariosPage,
     ResetsenhaPage,
     OfertaPage,
     OfertacadastrarPage,
     CategoriabuscaPipe,
     OfertaPipe,
     EmpresaPipe, 
-    FotosPage,
-    LoginusuariosPage,
    //CadusuariosPage
   ],
   imports: [
@@ -89,6 +91,7 @@ import { AuthProvider } from '../providers/auth/auth.1';
     HomePage,
     EmpresasPage,
     EmpresacadastrarPage,
+    EmpresadetalhesPage,
     LoginPage,
     OfertaPage,
     OfertacadastrarPage,

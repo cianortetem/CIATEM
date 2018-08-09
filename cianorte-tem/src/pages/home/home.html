@@ -15,7 +15,7 @@
   <ion-list no-lines>
     <ion-item-sliding *ngFor="let categoria of categorias | async | categoriabusca : terms">
 
-      <button ion-item (click)="pega_id_lista()">
+      <button ion-item (click)="empresasPage()">
         <ion-icon name="cart" item-start></ion-icon>
         <h2>{{ categoria.name }}</h2>
       </button>

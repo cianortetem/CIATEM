@@ -15,6 +15,7 @@ import { OfertacadastrarPage } from '../pages/ofertacadastrar/ofertacadastrar';
 import { FotosPage } from '../pages/fotos/fotos';
 import { LoginusuariosPage } from '../pages/auth/loginusuarios/loginusuarios';
 import { CadusuariosPage } from '../pages/auth/cadusuarios/cadusuarios';
+import { EmpresadetalhesPage } from '../pages/empresadetalhes/empresadetalhes';
 
 @Component({
   templateUrl: 'app.html'
@@ -35,7 +36,6 @@ export class cianortetem {
       { title: 'Categorias', component: CategoriasPage },
       { title: 'Empresas', component: EmpresasPage },
       { title: 'Ofertas', component: OfertaPage },
-      { title: 'Ofertas', component: OfertacadastrarPage },
       { title: 'Fotos', component: FotosPage },
       { title: 'Sair', component: LoginPage},
     ];

@@ -7,6 +7,7 @@ import { LoginPage } from '../login/login';
 import { CategoriasPage } from '../categorias/categorias';
 import { CategoriacadastrarPage } from '../categoriacadastrar/categoriacadastrar';
 import { EmpresacadastrarPage } from '../empresacadastrar/empresacadastrar';
+import { EmpresadetalhesPage } from '../empresadetalhes/empresadetalhes';
 import { EmpresasPage } from '../empresas/empresas';
 
 
@@ -52,5 +53,8 @@ export class HomePage {
    this.navCtrl.setRoot(HomePage);
  }
 
+ empresasPage(){
+   this.navCtrl.push(EmpresasPage);
+ }
 }
 

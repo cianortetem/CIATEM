@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch'; 
 import { HomePage } from '../home/home';
 import { CategoriacadastrarPage } from '../categoriacadastrar/categoriacadastrar';
 

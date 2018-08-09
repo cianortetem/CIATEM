@@ -30,7 +30,7 @@ export class LoginPage {
     try{
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       if(result){
-        this.navCtrl.setRoot(LoginusuariosPage);
+        this.navCtrl.setRoot(HomePage);
       }else{
         this.toastCtrl.create({
           message: 'Usuário ou senha inconrretos, tente novamente!',

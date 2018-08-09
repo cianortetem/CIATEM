@@ -11,32 +11,32 @@
     <ion-img class="logo" src="assets/imgs/logo.png" alt="Logo do app"></ion-img>
 
       <h4 class="slogan">CIANORTE - TEM</h4>
-      <p  class="slogan">Sua cidade na sua mão</p>
+      <p id="slogan" class="slogan">Sua cidade na sua mão</p>
 
-    <ion-item class="campos">
-      <ion-label floating>E-mail</ion-label>
+    <ion-item class="campos" id="email">
+      <ion-label stacked color="secondary">E-mail</ion-label>
       <ion-input type="email" [(ngModel)]="user.email"></ion-input>
     </ion-item>
 
     <ion-item class="campos">
-      <ion-label floating>Senha</ion-label>
+      <ion-label stacked color="secondary">Senha</ion-label>
       <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
 
     <ion-item class="manterconectado">
-      <ion-label color="secondary"> Manter conectado</ion-label>
+      <ion-label color="secondary"> Manter conectado?</ion-label>
       <ion-toggle color="secondary" (click)="toastEntrar()" checked="true"></ion-toggle>
     </ion-item>
 
-    <button class="btnEntrar" (click)="fazerLogin(user)" ion-button color="secondary" outline block round>
+    <button class="botao" id="btnEntrar" (click)="fazerLogin(user)" ion-button color="secondary" outline block round>
       ENTRAR
     </button>
-    <button class="btnCancelar" (click)="showAlert()" ion-button color="danger" round block>
-      CANCELAR
+    <button class="botao" (click)="cadastrarUsuario()" ion-button color="danger" round block>
+      Cadastrar - se
     </button>
-    <div class="row">
-        <button class="btnLabel" ion-button clear color="secondary" (click)="cadastrarUsuario()">Cadastrar - se</button>
-        <button class="btnLabel" ion-button  clear color="danger" (click)="reset_senha()">Esqueceu a senha?</button>
+    
+    <div class="row">      
+        <button class="btnLabel" ion-button clear color="secondary" (click)="reset_senha()">Esqueceu a senha?</button>
     </div>
   </ion-list>
 </ion-content>
