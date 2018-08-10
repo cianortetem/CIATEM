@@ -23,7 +23,7 @@ import { EmpresadetalhesPage } from '../pages/empresadetalhes/empresadetalhes';
 export class cianortetem {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = EmpresadetalhesPage;
 
   pages: Array<{title: string, component: any}>;
 

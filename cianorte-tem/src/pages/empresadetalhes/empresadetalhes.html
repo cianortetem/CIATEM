@@ -9,54 +9,85 @@
 <ion-content>
   <ion-card>
 
-  <img src="assets/imgs/logo.png">
-  <ion-fab right top>
-    <button ion-fab>
-      <ion-icon name="pin"></ion-icon>
-    </button>
-  </ion-fab>
+    <img src="assets/imgs/logo.png">
+    <ion-fab right top>
+      <button ion-fab>
+        <ion-icon name="pin"></ion-icon>
+      </button>
+    </ion-fab>
 
-  <ion-card-content>
-    <h2>Restaurante: Nome da empresa</h2>
-    <p>Empresa na area de confecção de roupas masculinas e femininas nada de infantil.</p>
-  </ion-card-content>
-  
-  <ion-item>
-    <h2>Endereço</h2>
-    <p>14 S. Hop Avenue, Madison, WI 53703</p>
-  </ion-item>
+    <ion-card-header>
+      <h2>"{{"categoria"}}"Mercado</h2>
+      <h2>""{{"nommeFantasia"}}" Tradição</h2>
+    </ion-card-header>
+    
+    <ion-card id="info">
+      <ion-item>
+        <h2>Endereço</h2>
+        <button ion-button icon-start round outline item-end color="secondary">
+          <ion-icon name="pin" color="danger"></ion-icon>
+          Ver no mapa
+        </button>
+      </ion-item>
+      
+      <ion-item>
+        <p>14 S. Hop Avenue, Madison, WI 53703</p>
+      </ion-item>
 
-  <ion-item>
-    <span item-start>18 min</span>
-    <span item-start>(2.6 mi)</span>
-    <button ion-button icon-start clear item-end>
-      <ion-icon name="navigate"></ion-icon>
-      Navegar
-    </button>
-  </ion-item>
-  
-  <ion-item>
-    <h2>Contato</h2>
-  </ion-item>
-  <ion-item>
-    <ion-icon name="call" item-start large></ion-icon>
-    <h2>99999-9999</h2>
-  </ion-item>
-  <ion-item>
-    <ion-icon name="logo-whatsapp" item-start large></ion-icon>
-    <h2>99999-9999</h2>
-  </ion-item>
-  <ion-item>
-    <ion-icon name="md-mail" item-start large></ion-icon>
-    <h2>empresa@email.com</h2>
-  </ion-item>
+      <ion-item>
+        <span item-start>Distancia</span>
+        <span item-start>(2.6 mi)</span>
+        <button ion-button icon-start clear item-end>
+          <ion-icon name="navigate"></ion-icon>
+          Navegar
+        </button>
+      </ion-item>
+    </ion-card>
+    
+    <ion-card id="info">
+      <ion-item>
+        <h2>Contato</h2>
+        </ion-item>
+        
+      <ion-item class="infoComun">
+        <ion-icon name="call" item-start></ion-icon>
+        <h2>[44] 99999-9999</h2>
+      </ion-item>
 
-  <ion-item>
-    <h2>Horário de atendimento</h2>
-    <p>Segunda a sexta</p>
-    <p>Sábados e feriados</p>
-    <p>Domingos</p>
-  </ion-item>
+      <ion-item class="infoComun">
+        <ion-icon name="logo-whatsapp" item-start></ion-icon>
+        <h2>[44] 99999-9999</h2>
+      </ion-item>
+      
+      <ion-item class="infoComun">
+        <ion-icon name="md-mail" item-start></ion-icon>
+        <h2>empresa@email.com</h2>
+      </ion-item>
+      
+      <ion-item class="infoComun">
+        <ion-icon name="ios-globe-outline" item-start></ion-icon>
+        <h2>empresa@email.com</h2>
+      </ion-item>
+    </ion-card>
+    
+    <ion-card id="info">
+      <ion-item>
+        <h2>Horário de atendimento</h2>
+        </ion-item>
+
+        <ion-item class="infoComun">
+          <span item-start>Segunda - Sexta</span>
+          <ion-badge item-end>08:00 - 10:00</ion-badge>
+        </ion-item>
+        <ion-item class="infoComun">
+          <span item-start>Sábados e feriados</span>
+          <ion-badge item-end>08:00 - 10:00</ion-badge>
+        </ion-item>
+        <ion-item class="infoComun">
+          <span item-start>Domingos</span>
+          <ion-badge item-end>08:00 - 10:00</ion-badge>
+        </ion-item>
+    </ion-card>
 
 </ion-card>
 

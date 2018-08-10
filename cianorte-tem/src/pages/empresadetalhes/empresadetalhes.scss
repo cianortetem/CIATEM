@@ -1,3 +1,20 @@
 page-empresadetalhes {
-
+    #info{
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-shadow: none;
+        border-top: 1px solid rgb(201, 200, 200);
+    }
+    .infoComun{
+        min-height: 1.4rem !important;
+        padding-top: 0px !important;
+        font-size: 1.3rem;
+        & span{
+        margin: 0px !important;
+        }
+        & .label-md{
+            margin: 0px 8px 0px 0;
+        }
+    }
 }
