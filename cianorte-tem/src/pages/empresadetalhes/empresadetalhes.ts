@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OfertaPage } from '../oferta/oferta';
 
-/**
- * Generated class for the EmpresadetalhesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +10,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EmpresadetalhesPage {
 
+  fundoLogin = [
+    'assets/imgs/fundoLogin/fundo.jpg'
+   ]
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EmpresadetalhesPage');
   }
+
+  ofertasPage(){
+    this.navCtrl.push(OfertaPage);
+  }
+ 
 
 }

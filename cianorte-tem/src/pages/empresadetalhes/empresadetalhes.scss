@@ -5,6 +5,12 @@ page-empresadetalhes {
         margin-right: 0 !important;
         box-shadow: none;
         border-top: 1px solid rgb(201, 200, 200);
+        & ion-icon{
+            margin: 0px 0px 0px 0px !important;
+        }
+        & h2{
+            font-weight: bold;
+        }
     }
     .infoComun{
         min-height: 1.4rem !important;
@@ -16,5 +22,25 @@ page-empresadetalhes {
         & .label-md{
             margin: 0px 8px 0px 0;
         }
+        & .btn{
+            font-size: 1.5rem !important;
+            margin: 5px 8px 9px 0 !important;    
+            padding-left: 0; 
+        }
+        & #whats{
+            color: #34af23 !important;
+            text-transform: none;
+        }
+        & #email{
+            color: #da4d39 !important;
+            text-transform: none;
+        }
+        & #site{
+            color: #00405d !important;
+            text-transform: none;
+        }
     }
+    // ion-footer{
+    //     height: 100px;
+    // }
 }

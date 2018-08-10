@@ -8,13 +8,13 @@
 
 <ion-content>
   <ion-card>
-
+    
     <img src="assets/imgs/logo.png">
-    <ion-fab right top>
+    <!-- <ion-fab right top>
       <button ion-fab>
         <ion-icon name="pin"></ion-icon>
       </button>
-    </ion-fab>
+    </ion-fab> -->
 
     <ion-card-header>
       <h2>"{{"categoria"}}"Mercado</h2>
@@ -47,32 +47,38 @@
     <ion-card id="info">
       <ion-item>
         <h2>Contato</h2>
-        </ion-item>
+      </ion-item>
         
       <ion-item class="infoComun">
-        <ion-icon name="call" item-start></ion-icon>
-        <h2>[44] 99999-9999</h2>
+        <button ion-button id="phone" class="btn" icon-start clear item-start>
+          <ion-icon name="call"></ion-icon>
+            [44] 99999-9999
+        </button>
+      </ion-item>
+      <ion-item class="infoComun">
+        <button ion-button id="whats" class="btn" icon-start clear item-start>
+          <ion-icon name="logo-whatsapp"></ion-icon>
+            [44] 99999-9999
+        </button>
+      </ion-item>
+      <ion-item class="infoComun">
+        <button ion-button id="email" class="btn" icon-start clear item-start>
+          <ion-icon name="md-mail"></ion-icon>
+            empresa@email.com
+        </button>
       </ion-item>
 
       <ion-item class="infoComun">
-        <ion-icon name="logo-whatsapp" item-start></ion-icon>
-        <h2>[44] 99999-9999</h2>
-      </ion-item>
-      
-      <ion-item class="infoComun">
-        <ion-icon name="md-mail" item-start></ion-icon>
-        <h2>empresa@email.com</h2>
-      </ion-item>
-      
-      <ion-item class="infoComun">
-        <ion-icon name="ios-globe-outline" item-start></ion-icon>
-        <h2>empresa@email.com</h2>
+        <button ion-button id="site" class="btn" icon-start clear item-start>
+          <ion-icon name="ios-globe-outline"></ion-icon>
+          empresa@email.com
+        </button>
       </ion-item>
     </ion-card>
     
     <ion-card id="info">
       <ion-item>
-        <h2>Horário de atendimento</h2>
+        <h2>Horários de atendimento</h2>
         </ion-item>
 
         <ion-item class="infoComun">
@@ -94,6 +100,88 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>        
-    <img src="assets/imgs/bannerpromo.jpg">         
+    <!-- <img src="assets/imgs/bannerpromo.jpg">          -->
+  <!-- <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade"> -->
+  <ion-slides pager="false" autoplay="3000" loop="true" speed="1000">
+
+      <ion-slide (click)="ofertasPage()">
+          <img src="assets/imgs/bannerpromo.jpg">
+      </ion-slide>
+    
+      <ion-slide>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="http://padariabaraocecap.com.br/wp-content/uploads/2018/03/oferta2.jpg">
+          </ion-thumbnail>
+          <h2>My Neighbor Totoro</h2>
+          <p>Hayao Miyazaki • 1988</p>
+          <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+        </ion-item>
+      </ion-slide>
+    
+      <ion-slide>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="http://espaconobrepizzaria.com.br/espaconobre/wp-content/uploads/2015/07/CardapioLanches.jpg">
+          </ion-thumbnail>
+          <h2>My Neighbor Totoro</h2>
+          <p>Hayao Miyazaki • 1988</p>
+          <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+        </ion-item>
+      </ion-slide>
+    
+      <ion-slide>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="http://s.glbimg.com/jo/g1/f/original/2012/01/23/abobora-com-camarao.jpg">
+          </ion-thumbnail>
+          <h2>My Neighbor Totoro</h2>
+          <p>Hayao Miyazaki • 1988</p>
+          <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+        </ion-item>
+      </ion-slide>
+    
+      <ion-slide>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="https://www.dietaja.org/wp-content/uploads/2018/01/Comida-fitness-4-630x420.jpg">
+          </ion-thumbnail>
+          <h2>My Neighbor Totoro</h2>
+          <p>Hayao Miyazaki • 1988</p>
+          <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+        </ion-item>
+      </ion-slide>
+    
+      <ion-slide>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="https://www.defatoonline.com.br/wp-content/uploads/2018/04/29792760_1868550566503077_2997096073057437914_n.jpg">
+          </ion-thumbnail>
+          <h2>My Neighbor Totoro</h2>
+          <p>Hayao Miyazaki • 1988</p>
+          <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+        </ion-item>
+      </ion-slide>
+    
+      <ion-slide>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="http://jacomar.com.br/artigos/wp-content/uploads/2017/06/curiosidades-da-culinaria-espanhola.jpg">
+          </ion-thumbnail>
+          <h2>My Neighbor Totoro</h2>
+          <p>Hayao Miyazaki • 1988</p>
+          <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+        </ion-item>
+      </ion-slide>
+    
+    </ion-slides>
+
+
+
+    <!-- <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+        <ion-slide class="slideLogin swiper-no-swiping" *ngFor="let bgLogin of fundoLogin"
+          [ngStyle]="{'background-image': 'url('+ bgLogin +')'}">
+        </ion-slide>
+      </ion-slides> -->
   </ion-toolbar>
 </ion-footer>
