@@ -44,8 +44,8 @@ export class EmpresasPage {
   homePage(){
    this.navCtrl.setRoot(HomePage);
  }
-  empresasDetalhes(){
-   this.navCtrl.push(EmpresadetalhesPage);
+  empresasDetalhes(empresa: any){
+   this.navCtrl.push(EmpresadetalhesPage,{dadosEmpresa:empresa});
  }
 
 }

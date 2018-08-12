@@ -17,8 +17,7 @@
     </ion-fab> -->
 
     <ion-card-header>
-      <h2>"{{"categoria"}}"Mercado</h2>
-      <h2>""{{"nommeFantasia"}}" Tradição</h2>
+      <h1>{{dadosEmpresa.nomefantasia}}</h1>
     </ion-card-header>
     
     <ion-card id="info">
@@ -31,7 +30,9 @@
       </ion-item>
       
       <ion-item>
-        <p>14 S. Hop Avenue, Madison, WI 53703</p>
+        <p>{{dadosEmpresa.endereco}}, {{dadosEmpresa.num}} - {{dadosEmpresa.bairro}}, 
+        <br>
+        {{dadosEmpresa.cidade}}, {{dadosEmpresa.cep}}</p>
       </ion-item>
 
       <ion-item>
@@ -52,26 +53,32 @@
       <ion-item class="infoComun">
         <button ion-button id="phone" class="btn" icon-start clear item-start>
           <ion-icon name="call"></ion-icon>
-            [44] 99999-9999
+            {{dadosEmpresa.fone1}}
+        </button>
+      </ion-item>
+      <ion-item class="infoComun">
+        <button ion-button id="phone" class="btn" icon-start clear item-start>
+          <ion-icon name="call"></ion-icon>
+            {{dadosEmpresa.fone2}}
         </button>
       </ion-item>
       <ion-item class="infoComun">
         <button ion-button id="whats" class="btn" icon-start clear item-start>
           <ion-icon name="logo-whatsapp"></ion-icon>
-            [44] 99999-9999
+            {{dadosEmpresa.celular}}
         </button>
       </ion-item>
       <ion-item class="infoComun">
         <button ion-button id="email" class="btn" icon-start clear item-start>
           <ion-icon name="md-mail"></ion-icon>
-            empresa@email.com
+            {{dadosEmpresa.email}}
         </button>
       </ion-item>
 
       <ion-item class="infoComun">
         <button ion-button id="site" class="btn" icon-start clear item-start>
           <ion-icon name="ios-globe-outline"></ion-icon>
-          empresa@email.com
+          {{dadosEmpresa.siteempresa}}
         </button>
       </ion-item>
     </ion-card>
@@ -83,15 +90,15 @@
 
         <ion-item class="infoComun">
           <span item-start>Segunda - Sexta</span>
-          <ion-badge item-end>08:00 - 10:00</ion-badge>
+          <ion-badge item-end>{{dadosEmpresa.horarioatend1}}</ion-badge>
         </ion-item>
         <ion-item class="infoComun">
           <span item-start>Sábados e feriados</span>
-          <ion-badge item-end>08:00 - 10:00</ion-badge>
+          <ion-badge item-end>{{dadosEmpresa.horarioatend2}}</ion-badge>
         </ion-item>
         <ion-item class="infoComun">
           <span item-start>Domingos</span>
-          <ion-badge item-end>08:00 - 10:00</ion-badge>
+          <ion-badge item-end>{{dadosEmpresa.horarioatend3}}</ion-badge>
         </ion-item>
     </ion-card>
 
@@ -104,16 +111,16 @@
   <!-- <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade"> -->
   <ion-slides pager="false" autoplay="3000" loop="true" speed="1000">
 
-      <ion-slide (click)="ofertasPage()">
+      <!-- <ion-slide (click)="ofertasPage()">
           <img src="assets/imgs/bannerpromo.jpg">
-      </ion-slide>
+      </ion-slide> -->
     
       <ion-slide>
         <ion-item>
           <ion-thumbnail item-start>
             <img src="http://padariabaraocecap.com.br/wp-content/uploads/2018/03/oferta2.jpg">
           </ion-thumbnail>
-          <h2>My Neighbor Totoro</h2>
+          <!-- <h2>{{ ofertas.descricao }}df</h2> -->
           <p>Hayao Miyazaki • 1988</p>
           <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
         </ion-item>
@@ -176,12 +183,5 @@
     
     </ion-slides>
 
-
-
-    <!-- <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
-        <ion-slide class="slideLogin swiper-no-swiping" *ngFor="let bgLogin of fundoLogin"
-          [ngStyle]="{'background-image': 'url('+ bgLogin +')'}">
-        </ion-slide>
-      </ion-slides> -->
   </ion-toolbar>
 </ion-footer>
