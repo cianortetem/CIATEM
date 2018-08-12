@@ -48,7 +48,7 @@ export class LoginPage {
   }
 
   cadastrarUsuario(){
-      this.navCtrl.push(LoginusuariosPage);
+      this.navCtrl.push(CadastrarusuarioPage);
   }
 
 paginaHome(){
