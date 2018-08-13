@@ -10,12 +10,6 @@
   <ion-card>
     
     <img src="assets/imgs/logo.png">
-    <!-- <ion-fab right top>
-      <button ion-fab>
-        <ion-icon name="pin"></ion-icon>
-      </button>
-    </ion-fab> -->
-
     <ion-card-header>
       <h1>{{dadosEmpresa.nomefantasia}}</h1>
     </ion-card-header>
@@ -23,7 +17,7 @@
     <ion-card id="info">
       <ion-item>
         <h2>Endereço</h2>
-        <button ion-button icon-start round outline item-end color="secondary">
+        <button ion-button icon-start round outline item-end color="secondary" (click)="verNoMapa()">
           <ion-icon name="pin" color="danger"></ion-icon>
           Ver no mapa
         </button>
@@ -38,7 +32,7 @@
       <ion-item>
         <span item-start>Distancia</span>
         <span item-start>(2.6 mi)</span>
-        <button ion-button icon-start clear item-end>
+        <button ion-button icon-start round outline item-end (click)="navegar()">
           <ion-icon name="navigate"></ion-icon>
           Navegar
         </button>

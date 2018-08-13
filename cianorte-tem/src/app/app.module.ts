@@ -39,6 +39,8 @@ import { FotosPage } from '../pages/fotos/fotos';
 import { LoginusuariosPage } from '../pages/auth/loginusuarios/loginusuarios';
 //import { CadusuariosPage } from '../pages/auth/cadusuarios/cadusuarios';
 import { EmpresadetalhesPage } from '../pages/empresadetalhes/empresadetalhes';
+import { RotasPage } from '../pages/rotas/rotas';
+import { MapaPage } from '../pages/mapa/mapa';
 
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ providers ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriaProvider } from '../providers/categoria/categoria';
@@ -51,6 +53,8 @@ import { CategoriabuscaPipe } from '../pipes/categoriabusca/categoriabusca';
 import { OfertaPipe } from '../pipes/oferta/oferta';
 import { EmpresaPipe } from '../pipes/empresa/empresa';
 import { AuthProvider } from '../providers/auth/auth.1';
+
+import { Geolocation } from '@ionic-native/geolocation';
 
 @NgModule({
   declarations: [
@@ -71,6 +75,8 @@ import { AuthProvider } from '../providers/auth/auth.1';
     CategoriabuscaPipe,
     OfertaPipe,
     EmpresaPipe, 
+    RotasPage,
+    MapaPage
    //CadusuariosPage
   ],
   imports: [
@@ -98,6 +104,8 @@ import { AuthProvider } from '../providers/auth/auth.1';
     ResetsenhaPage,
     FotosPage,
     LoginusuariosPage,
+    RotasPage,
+    MapaPage
     //CadusuariosPage
   ],
   providers: [
@@ -115,6 +123,7 @@ import { AuthProvider } from '../providers/auth/auth.1';
       ImagePicker,
       DatePipe,
       AngularFireDatabase,
+      Geolocation
       //Facebook
   ]
 })

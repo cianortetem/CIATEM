@@ -16,6 +16,8 @@ import { FotosPage } from '../pages/fotos/fotos';
 import { LoginusuariosPage } from '../pages/auth/loginusuarios/loginusuarios';
 import { CadusuariosPage } from '../pages/auth/cadusuarios/cadusuarios';
 import { EmpresadetalhesPage } from '../pages/empresadetalhes/empresadetalhes';
+import { RotasPage } from '../pages/rotas/rotas';
+import { MapaPage } from '../pages/mapa/mapa';
 
 @Component({
   templateUrl: 'app.html'
@@ -23,7 +25,7 @@ import { EmpresadetalhesPage } from '../pages/empresadetalhes/empresadetalhes';
 export class cianortetem {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = RotasPage;
 
   pages: Array<{title: string, component: any}>;
 

@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OfertaPage } from '../oferta/oferta';
 // import { EmpresaProvider } from '../../providers/empresa/empresa';
 import { OfertaProvider } from '../../providers/oferta/oferta';
+import { MapaPage } from '../mapa/mapa';
+import { RotasPage } from '../rotas/rotas';
 
 
 @IonicPage()
@@ -35,6 +37,13 @@ export class EmpresadetalhesPage {
   ofertasPage(){
     this.navCtrl.push(OfertaPage);
   }
+
+  verNoMapa(){
+    this.navCtrl.push(MapaPage);
+  }
  
+  navegar(){
+    this.navCtrl.push(RotasPage);
+  }
 
 }
