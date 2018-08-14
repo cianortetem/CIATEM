@@ -31,12 +31,16 @@
     <button class="botao" id="btnEntrar" (click)="fazerLogin(user)" ion-button color="secondary" outline block round>
       ENTRAR
     </button>
-    <button class="botao" (click)="cadastrarUsuario()" ion-button color="danger" round block>
+    <!-- <button class="botao" (click)="cadastrarUsuario()" ion-button color="danger" round block>
       Cadastrar - se
-    </button>
-    
-    <div class="row">      
-        <button class="btnLabel" ion-button clear color="secondary" (click)="reset_senha()">Esqueceu a senha?</button>
+    </button> -->
+    <div class="action-sheets-basic-page">
+      <button class="botao" (click)="opcoesCadastro()" ion-button color="danger" round block>
+        Cadastro
+      </button>
     </div>
+    <!-- <div class="row">      
+        <button class="btnLabel" ion-button clear color="secondary" (click)="reset_senha()">Esqueceu a senha?</button>
+    </div> -->
   </ion-list>
 </ion-content>

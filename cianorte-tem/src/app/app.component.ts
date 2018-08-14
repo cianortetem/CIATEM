@@ -25,7 +25,7 @@ import { MapaPage } from '../pages/mapa/mapa';
 export class cianortetem {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = RotasPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -35,7 +35,6 @@ export class cianortetem {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Categorias', component: CategoriasPage },
       { title: 'Empresas', component: EmpresasPage },
       { title: 'Ofertas', component: OfertaPage },
       { title: 'Fotos', component: FotosPage },

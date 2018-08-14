@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { RotasPage } from '../rotas/rotas';
 
 declare var google;
 
@@ -12,7 +13,7 @@ declare var google;
 export class MapaPage {
   map: any;
 
-  constructor(private geolocation: Geolocation) { }
+  constructor(private geolocation: Geolocation, public nav: NavController) { }
 
   ionViewDidLoad() {
     this.geolocation.getCurrentPosition()
@@ -34,5 +35,9 @@ export class MapaPage {
       }).catch((error) => {
         console.log('Erro ao recuperar sua posição', error);
       });
+  }
+
+  navegar(){
+    this.nav.push(RotasPage);
   }
 }

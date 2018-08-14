@@ -17,7 +17,7 @@ page-login {
       display: block;
       margin: auto !important;
       background: none !important;
-      margin-Top: 50px !important;
+      margin-Top: 80px !important;
       bottom: 30px !important;
       width: 150px !important;
       height: 60px !important;
@@ -69,5 +69,44 @@ page-login {
     .text_center{
         text-align: center !important;
     }
-   
+
+}
+// ¬¬¬¬¬¬¬¬¬ Action sheets css tem que ser declarado sozinho nao usando sass ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+.iconEmpresa{
+    ion-icon{
+        font-size: 2.4rem !important;
+    }
+    color: #488aff!important;  
+        font-size: 2rem !important;
+}
+.iconCadastrese{
+    ion-icon{
+        font-size: 2.4rem !important;
+    }
+        color: #488aff!important;
+    font-size: 2rem !important;
+}
+.iconEsqueceuSenha{
+    ion-icon{
+        font-size: 2.4rem !important;
+        color: #ED4248 !important;
+    }
+    color: #ED4248 !important;
+}
+.iconCancelar{
+    // border: 2px solid #ED4248;
+    background-color: #ED4248 !important;
+    // color: #ED4248 !important;
+    color: #FFF !important;
+}
+
+.action-sheet-md .action-sheet-group:last-child {
+    padding-bottom: 0;
+}
+
+// .action-sheet-title{
+//     // font-size: 2rem !important;
+// }
+.action-sheet-group{
+    overflow: hidden !important;
 }

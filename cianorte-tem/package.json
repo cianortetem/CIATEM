@@ -1,7 +1,7 @@
 {
-  "name": "cianortetem",
+  "name": "Cianorte-Tem?",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Vagner Augustinho - Robson Cominato",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -54,7 +54,7 @@
     "@ionic/lab": "1.0.5",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project",
+  "description": "TCC - Pós graduação - Faculdade Alpha.",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},

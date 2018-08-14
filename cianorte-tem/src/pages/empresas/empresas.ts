@@ -15,6 +15,9 @@ import { EmpresadetalhesPage } from '../empresadetalhes/empresadetalhes';
 export class EmpresasPage {
   empresas: Observable<any>;
 
+  public obj: any;
+  public result: any;
+
   constructor(
   	public navCtrl: NavController,
   	private provider: EmpresaProvider,

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>cianortetem</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <name>Cianorte-Tem?</name>
+    <description>TCC - Pós graduação - Faculdade Alpha.</description>
+    <author email="cianorte.tem.app@gmail.com" href="http://ionicframework.com/">Vagner Augustinho - Robson Cominato</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -88,5 +88,6 @@
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="AIzaSyAorzheHUY_Qbs6v1bKPfF3pMGk7QVKfSM" />
     </plugin>
+    <allow-navigation href="http://192.168.56.1:8101" />
     <engine name="android" spec="7.0.0" />
 </widget>

@@ -25,7 +25,9 @@ export class RotasPage {
   }
 
   initializeMap() {
+    // this.startPosition = new google.maps.LatLng(-23.65490717, -52.61220157);
     this.startPosition = new google.maps.LatLng(-23.65490717, -52.61220157);
+    
 
     const mapOptions = {
       zoom: 16,

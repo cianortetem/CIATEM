@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, AlertController, ToastController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, AlertController, ToastController, NavParams, Platform, ActionSheetController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { ResetsenhaPage } from '../resetsenha/resetsenha';
 import { CadastrarusuarioPage } from '../cadastrarusuario/cadastrarusuario';
@@ -7,6 +7,7 @@ import { User } from "../../models/users";
 import { AngularFireAuth} from "angularfire2/auth";
 import { LoginusuariosPage } from '../auth/loginusuarios/loginusuarios';
 import { CadusuariosPage } from '../auth/cadusuarios/cadusuarios';
+import { EmpresacadastrarPage } from '../empresacadastrar/empresacadastrar';
 
 @IonicPage()
 @Component({
@@ -22,9 +23,9 @@ export class LoginPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public alertCtrl: AlertController,
-    public toastCtrl: ToastController) {
-
-  }
+    public toastCtrl: ToastController,
+    public platform: Platform,
+    public actionsheetCtrl: ActionSheetController) { }
 
   fazerLogin(user: User) {
     try{
@@ -42,17 +43,21 @@ export class LoginPage {
     }
   }
 
+  paginaHome(){
+    this.navCtrl.setRoot(HomePage);
+  }
+
   sair(){
     // this.afAuth.auth.signOut();
     this.navCtrl.setRoot(LoginPage);
   }
 
-  cadastrarUsuario(){
-      this.navCtrl.push(CadastrarusuarioPage);
+  cadastroEmpresa(){
+    this.navCtrl.push(EmpresacadastrarPage);
   }
 
-paginaHome(){
-    this.navCtrl.setRoot(HomePage);
+  cadastrarUsuario(){
+      this.navCtrl.push(CadastrarusuarioPage);
   }
 
   reset_senha(){
@@ -68,15 +73,6 @@ paginaHome(){
     alert.present();
   }
 
-  alertaLogin() {
-    let alert = this.alertCtrl.create({
-      title: 'Atenção',
-      subTitle: 'Não é possível fazer login ainda!',
-      buttons: ['SAIR']
-    });
-    alert.present();
-  }
-
   toastEntrar() {
     let toast = this.toastCtrl.create({
       message: 'Usuário ou senha inconrretos, tente novamente!',
@@ -85,31 +81,62 @@ paginaHome(){
     toast.present();
   }
 
-    cadastrar_se() {
-    let alert = this.alertCtrl.create();
-    alert.setTitle('O que deseja cadastrar');
-
-    alert.addInput({
-      type: 'radio',
-      label: 'EMPRESA',
-      value: 'blue',
-      checked: true
+  opcoesCadastro() {
+    let actionSheet = this.actionsheetCtrl.create({
+      title: 'O que você deseja fazer?',
+      cssClass: 'cadastro',
+      buttons: [        
+        {
+          text: 'Cadastrar - se',
+          icon: 'md-person',
+          cssClass:'iconCadastrese',
+          handler: () => {
+            this.cadastrarUsuario()
+          }
+        },{
+          text: 'Cadastrar empresa',
+          role: 'destructive',
+          icon: 'ios-ribbon',
+          cssClass:'iconEmpresa',
+          handler: () => {
+            this.cadastroEmpresa();
+          }
+        },
+        {
+          text: 'Esqueceu a senha?',
+          icon: 'md-alert',
+          cssClass:'iconEsqueceuSenha',
+          handler: () => {
+            this.reset_senha()
+          }
+        },
+        {
+          text: 'Cancelar cadastro',
+          role: 'cancel', // will always sort to be on the bottom
+          icon: 'close',
+          cssClass: 'iconCancelar',
+          handler: () => {
+            
+          }
+        }
+      ]
     });
-    alert.addInput({
-      type: 'radio',
-      label: 'E-MAIL',
-      value: 'blue'
-    });
-
-    alert.addButton('SAIR');
-    alert.addButton({
-      text: 'OK',
-      handler: data => {
-        // this.testRadioOpen = false;
-        // this.testRadioResult = data;
-      }
-    });
-    alert.present();
+    actionSheet.present();
   }
 
 }
+
+// botao_clicado(msg){
+  // switch(itemSelecionado){
+  //   case 0:
+  //     break;
+  //   case 1:
+  //     break;
+  // }
+  // let alert = this.alertCtrl.create({
+  //   title: "Voce clicou em ",
+  //   subTitle: msg
+  // });
+  // alert.present()
+  
+// }

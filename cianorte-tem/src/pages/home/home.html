@@ -17,7 +17,7 @@
 
       <button ion-item (click)="empresasPage()">
         <ion-icon name="cart" item-start></ion-icon>
-        <h2>{{ categoria.name }}</h2>
+        <h1>{{ categoria.name }}</h1>
       </button>
       
     </ion-item-sliding>
@@ -25,7 +25,78 @@
 
 </ion-content>
 <ion-footer>
-  <ion-toolbar>        
-    <img src="assets/imgs/bannerpromo.jpg">         
-  </ion-toolbar>
-</ion-footer>
+    <ion-toolbar>        
+      <!-- <img src="assets/imgs/bannerpromo.jpg">          -->
+    <!-- <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade"> -->
+    <ion-slides pager="false" autoplay="3000" loop="true" speed="1000">
+       
+        <ion-slide>
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="http://padariabaraocecap.com.br/wp-content/uploads/2018/03/oferta2.jpg">
+            </ion-thumbnail>
+            <!-- <h2>{{ ofertas.descricao }}df</h2> -->
+            <p>Hayao Miyazaki • 1988</p>
+            <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+          </ion-item>
+        </ion-slide>
+      
+        <ion-slide>
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="http://espaconobrepizzaria.com.br/espaconobre/wp-content/uploads/2015/07/CardapioLanches.jpg">
+            </ion-thumbnail>
+            <h2>My Neighbor Totoro</h2>
+            <p>Hayao Miyazaki • 1988</p>
+            <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+          </ion-item>
+        </ion-slide>
+      
+        <ion-slide>
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="http://s.glbimg.com/jo/g1/f/original/2012/01/23/abobora-com-camarao.jpg">
+            </ion-thumbnail>
+            <h2>My Neighbor Totoro</h2>
+            <p>Hayao Miyazaki • 1988</p>
+            <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+          </ion-item>
+        </ion-slide>
+      
+        <ion-slide>
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="https://www.dietaja.org/wp-content/uploads/2018/01/Comida-fitness-4-630x420.jpg">
+            </ion-thumbnail>
+            <h2>My Neighbor Totoro</h2>
+            <p>Hayao Miyazaki • 1988</p>
+            <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+          </ion-item>
+        </ion-slide>
+      
+        <ion-slide>
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="https://www.defatoonline.com.br/wp-content/uploads/2018/04/29792760_1868550566503077_2997096073057437914_n.jpg">
+            </ion-thumbnail>
+            <h2>My Neighbor Totoro</h2>
+            <p>Hayao Miyazaki • 1988</p>
+            <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+          </ion-item>
+        </ion-slide>
+      
+        <ion-slide>
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="http://jacomar.com.br/artigos/wp-content/uploads/2017/06/curiosidades-da-culinaria-espanhola.jpg">
+            </ion-thumbnail>
+            <h2>My Neighbor Totoro</h2>
+            <p>Hayao Miyazaki • 1988</p>
+            <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
+          </ion-item>
+        </ion-slide>
+      
+      </ion-slides>
+  
+    </ion-toolbar>
+  </ion-footer>
