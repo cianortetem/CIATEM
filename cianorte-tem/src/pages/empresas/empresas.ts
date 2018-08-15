@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
+
 import { HomePage } from '../home/home';
-import { EmpresaProvider } from '../../providers/empresa/empresa';
 import { EmpresacadastrarPage } from '../empresacadastrar/empresacadastrar';
 import { EmpresadetalhesPage } from '../empresadetalhes/empresadetalhes';
 
+import { EmpresaProvider } from '../../providers/empresa/empresa';
 
 @IonicPage()
 @Component({
@@ -13,17 +14,17 @@ import { EmpresadetalhesPage } from '../empresadetalhes/empresadetalhes';
   templateUrl: 'empresas.html',
 })
 export class EmpresasPage {
-  empresas: Observable<any>;
 
   public obj: any;
   public result: any;
+  
+  empresas: Observable<any>;
 
   constructor(
   	public navCtrl: NavController,
   	private provider: EmpresaProvider,
   	private toast: ToastController) {
-
-    this.empresas = this.provider.getAll();
+      this.empresas = this.provider.getAll();
   }
 
   novaEmpresa(){

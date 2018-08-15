@@ -25,7 +25,7 @@ import { MapaPage } from '../pages/mapa/mapa';
 export class cianortetem {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 

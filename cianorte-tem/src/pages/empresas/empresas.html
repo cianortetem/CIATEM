@@ -9,11 +9,11 @@
 <ion-content>
 
   <ion-list no-lines>
-    <ion-item-sliding *ngFor="let empresa of empresas | async | empresa : terms">
+    <ion-item-sliding *ngFor="let empresa of empresas | async | empresabusca : terms ">
 
       <button ion-item (click)="empresasDetalhes(empresa)">
         <ion-icon name="cart" item-start></ion-icon>
-        <h2>{{ empresa.nomefantasia }}</h2>
+        <h1>{{ empresa.nomefantasia }}</h1>
       </button>
 
       <!-- <ion-item-options side="left">

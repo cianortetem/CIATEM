@@ -51,7 +51,7 @@ import { FotosProvider } from '../providers/fotos/fotos';
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ pipes ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriabuscaPipe } from '../pipes/categoriabusca/categoriabusca';
 import { OfertaPipe } from '../pipes/oferta/oferta';
-import { EmpresaPipe } from '../pipes/empresa/empresa';
+import { EmpresabuscaPipe } from '../pipes/empresabusca/empresabusca';
 import { AuthProvider } from '../providers/auth/auth.1';
 
 import { Geolocation } from '@ionic-native/geolocation';
@@ -74,7 +74,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     OfertacadastrarPage,
     CategoriabuscaPipe,
     OfertaPipe,
-    EmpresaPipe, 
+    EmpresabuscaPipe, 
     RotasPage,
     MapaPage
    //CadusuariosPage
