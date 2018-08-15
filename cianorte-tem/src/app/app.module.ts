@@ -41,7 +41,7 @@ import { LoginusuariosPage } from '../pages/auth/loginusuarios/loginusuarios';
 import { EmpresadetalhesPage } from '../pages/empresadetalhes/empresadetalhes';
 import { RotasPage } from '../pages/rotas/rotas';
 import { MapaPage } from '../pages/mapa/mapa';
-
+import { OfertadetalhesPage } from '../pages/ofertadetalhes/ofertadetalhes';
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ providers ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriaProvider } from '../providers/categoria/categoria';
 import { EmpresaProvider } from '../providers/empresa/empresa';
@@ -55,6 +55,7 @@ import { EmpresabuscaPipe } from '../pipes/empresabusca/empresabusca';
 import { AuthProvider } from '../providers/auth/auth.1';
 
 import { Geolocation } from '@ionic-native/geolocation';
+import { OfertabuscarPipe } from '../pipes/ofertabuscar/ofertabuscar';
 
 @NgModule({
   declarations: [
@@ -74,9 +75,11 @@ import { Geolocation } from '@ionic-native/geolocation';
     OfertacadastrarPage,
     CategoriabuscaPipe,
     OfertaPipe,
+    OfertabuscarPipe,
     EmpresabuscaPipe, 
     RotasPage,
-    MapaPage
+    MapaPage,
+    OfertadetalhesPage
    //CadusuariosPage
   ],
   imports: [
@@ -105,7 +108,8 @@ import { Geolocation } from '@ionic-native/geolocation';
     FotosPage,
     LoginusuariosPage,
     RotasPage,
-    MapaPage
+    MapaPage,
+    OfertadetalhesPage
     //CadusuariosPage
   ],
   providers: [

@@ -1,17 +1,38 @@
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-buttons start>
-      <button ion-button icon-only color="danger" (click)="homePage()">
-          <ion-icon name="md-power"></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-title text-center>Ofertas</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-navbar color="secondary">
+      <ion-toolbar color="secondary">
+        <ion-searchbar placeholder="Pesquisar ofertas" [(ngModel)]="terms"></ion-searchbar>
+      </ion-toolbar>
+    </ion-navbar>
+  </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-  <ion-list no-lines>
+  <ion-list *ngFor="let oferta of ofertas | async | ofertabuscar : terms ">
+    
+    <!-- <ion-card (click)="ofertaDetalhes()"> -->
+    <ion-card (click)="ofertaDetalhes()">
+      <ion-card-header id="cardHeader">
+        <ion-item>
+          <ion-card-title id="cardTitle">
+            <span item-start>{{ oferta.descricao }}</span>
+          </ion-card-title>
+          <ion-badge item-end color="danger">{{ oferta.preco }}</ion-badge>
+        </ion-item>
+      </ion-card-header>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/logo.png">
+        </ion-thumbnail>        
+          <!-- <ion-badge class="infoCenter" id="oferValidade">Oferta válida para {{ oferta.dataoferta }}</ion-badge> -->
+          <p class="infoCenter" id="oferValidade">Oferta válida para {{ oferta.dataoferta }}</p>
+          <p class="infoCenter">Nome do estabelecimento</p>
+          <p class="infoCenter" id="info"><- Mais informações -></p>
+        </ion-item> 
+      </ion-card>
+
+  </ion-list>
+  <!-- <ion-list no-lines>
     <ion-card *ngFor="let oferta of ofertas | async">
       <ion-card-header>
         <ion-row>
@@ -80,11 +101,11 @@
         </ion-item-options>
       </ion-item-sliding>
     </ion-card>  
-  </ion-list>
+  </ion-list> -->
 
-  <ion-fab bottom right>
+  <!-- <ion-fab bottom right>
     <button ion-fab color="secondary" (click)="novaOferta()">
       <ion-icon name="add"></ion-icon>
     </button>
-  </ion-fab>
+  </ion-fab> -->
 </ion-content>

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { HomePage } from '../home/home';
 import { OfertaProvider } from '../../providers/oferta/oferta';
 import { OfertacadastrarPage } from '../ofertacadastrar/ofertacadastrar';
+import { OfertadetalhesPage } from '../ofertadetalhes/ofertadetalhes';
 
 @IonicPage()
 @Component({
@@ -14,12 +15,19 @@ import { OfertacadastrarPage } from '../ofertacadastrar/ofertacadastrar';
 export class OfertaPage {
   ofertas: Observable<any>;
 
+  public obj: any;
+  public result: any;
+
   constructor(
   	public navCtrl: NavController,
   	private provider: OfertaProvider,
   	private toast: ToastController) {
 
     this.ofertas = this.provider.getAll();
+  }
+
+  ofertaDetalhes(){
+    this.navCtrl.push(OfertadetalhesPage);
   }
 
   novaOferta(){

@@ -1,4 +1,25 @@
 page-oferta {
+    .searchbar-md .searchbar-input {
+        padding: 5px 40px;
+        border-radius: 5px;
+        background-position: left 8px center;
+        height: auto;
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 3rem;
+        color: #141414;
+        background-color: #fff;
+    }
+
+    .searchbar-md .searchbar-search-icon {
+        left: 10px;
+        top: 10px;
+    }
+
+    .back-button-md {
+        margin: 0 0px;
+        min-width: 39px;
+    }
     *{
         padding: 0px;
     }
@@ -39,5 +60,73 @@ page-oferta {
     #obs{
         bottom: -20px;
         text-align: right;
+    }
+
+// ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ ofertas em lista ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+    ion-list{
+        margin-bottom: 2px !important
+    }
+
+    ion-card{
+        width: 100% !important;
+        margin: 1px 0px !important;
+    }
+
+    #cardHeader{
+        padding: 0;
+        & ion-badge{
+            padding: 5px 10px;
+            font-size: 1.5rem;
+            // background-color: #FFF !important;
+            // color: red;
+            // border: 1px #c83b3b solid;
+            }
+        
+        & .input-wrapper{
+            margin: 0
+        }
+        & .card-header card-header-md{
+            height: 40px;
+        }
+    }
+    
+    .label-md{
+        margin: 0px 8px 13px 0 !important;
+    }
+    #cardTitle{
+        margin: 10px 0 0 0;
+        padding: 0;
+        font-size: 2.1rem;
+        font-weight: bold;
+        color: #333333;
+    }
+    ion-thumbnail{
+        margin-top: 0px ;
+        min-width: 60px;
+        min-height: 60px;
+    }
+    .item-md ion-thumbnail ion-img, .item-md ion-thumbnail img{
+        width: 60px;
+        height: 60px;
+    }
+
+    .item-md ion-thumbnail {
+        min-width: 60px;
+        min-height: 60px;
+    }
+
+    #oferValidade{
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 2px !important;
+        background-color: rgb(255, 238, 1);
+        color:  #F00;
+    }
+
+    #info{
+        color: #488aff;
+    }
+    .infoCenter{
+        text-align: center;
     }
 }

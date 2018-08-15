@@ -9,6 +9,7 @@ import { CategoriacadastrarPage } from '../categoriacadastrar/categoriacadastrar
 import { EmpresacadastrarPage } from '../empresacadastrar/empresacadastrar';
 import { EmpresadetalhesPage } from '../empresadetalhes/empresadetalhes';
 import { EmpresasPage } from '../empresas/empresas';
+import { OfertaPage } from '../oferta/oferta';
 
 
 @Component({
@@ -56,5 +57,9 @@ export class HomePage {
  empresasPage(){
    this.navCtrl.push(EmpresasPage);
  }
+ ofertasPage(){
+  this.navCtrl.push(OfertaPage);
+}
+
 }
 

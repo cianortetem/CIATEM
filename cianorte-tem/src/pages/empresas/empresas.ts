@@ -7,6 +7,7 @@ import { EmpresacadastrarPage } from '../empresacadastrar/empresacadastrar';
 import { EmpresadetalhesPage } from '../empresadetalhes/empresadetalhes';
 
 import { EmpresaProvider } from '../../providers/empresa/empresa';
+import { OfertaPage } from '../oferta/oferta';
 
 @IonicPage()
 @Component({
@@ -29,6 +30,10 @@ export class EmpresasPage {
 
   novaEmpresa(){
     this.navCtrl.push(EmpresacadastrarPage);
+  }
+  
+  ofertasPage(){
+    this.navCtrl.push(OfertaPage);
   }
   
   editaEmpresa(empresa: any){
