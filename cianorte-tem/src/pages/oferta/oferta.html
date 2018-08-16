@@ -9,9 +9,8 @@
 <ion-content>
 
   <ion-list *ngFor="let oferta of ofertas | async | ofertabuscar : terms ">
-    
-    <!-- <ion-card (click)="ofertaDetalhes()"> -->
-    <ion-card (click)="ofertaDetalhes()">
+   
+    <ion-card (click)="ofertaDetalhes(oferta)">
       <ion-card-header id="cardHeader">
         <ion-item>
           <ion-card-title id="cardTitle">
@@ -23,8 +22,7 @@
       <ion-item>
         <ion-thumbnail item-start>
           <img src="assets/imgs/logo.png">
-        </ion-thumbnail>        
-          <!-- <ion-badge class="infoCenter" id="oferValidade">Oferta válida para {{ oferta.dataoferta }}</ion-badge> -->
+        </ion-thumbnail> 
           <p class="infoCenter" id="oferValidade">Oferta válida para {{ oferta.dataoferta }}</p>
           <p class="infoCenter">Nome do estabelecimento</p>
           <p class="infoCenter" id="info"><- Mais informações -></p>

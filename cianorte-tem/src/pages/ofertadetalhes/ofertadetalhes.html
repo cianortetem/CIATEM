@@ -7,14 +7,15 @@
   </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let oferta of ofertas | async">
+    <!-- <ion-card *ngFor="let oferta of ofertas | async"> -->
+    <ion-card>
         <ion-card-header>
           <ion-row>
             <ion-col id="dataofertap">
               Oferta válida para:
             </ion-col>
             <ion-col id="dataoferta">
-              {{ oferta.dataoferta }}
+              {{ dadosOferta.dataoferta }}
             </ion-col>
           </ion-row>
         </ion-card-header>
@@ -24,30 +25,30 @@
           <ion-card-title>
             <ion-row>
                 <ion-col id="descricao">
-                  <h1>{{ oferta.descricao }}</h1>
+                  <h1>{{ dadosOferta.descricao }}</h1>
                 </ion-col>
               </ion-row>
           </ion-card-title>
           <ion-row>
             <ion-col id="preco">
-              {{oferta.preco}}
+              {{dadosOferta.preco}}
             </ion-col>
             <ion-col id="obs">
               <ion-note>
-                {{oferta.item}}
+                {{dadosOferta.item}}
               </ion-note>
             </ion-col>
           </ion-row>
           <ion-row>
               <ion-col id="item">
                 <ion-note>
-                  {{oferta.obs}}
+                  {{dadosOferta.obs}}
                 </ion-note>
               </ion-col>
             </ion-row>
         </ion-card-content>
   
-        <ion-item-sliding>
+        <!-- <ion-item-sliding>
           <ion-item>
            
             <button ion-button icon-left clear item-start id="btnWhatsapp">
@@ -73,6 +74,6 @@
               <ion-icon name="trash"></ion-icon>
             </button>
           </ion-item-options>
-        </ion-item-sliding>
+        </ion-item-sliding> -->
       </ion-card> 
 </ion-content>

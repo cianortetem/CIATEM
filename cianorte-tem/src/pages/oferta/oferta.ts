@@ -26,10 +26,6 @@ export class OfertaPage {
     this.ofertas = this.provider.getAll();
   }
 
-  ofertaDetalhes(){
-    this.navCtrl.push(OfertadetalhesPage);
-  }
-
   novaOferta(){
     this.navCtrl.push(OfertacadastrarPage);
   }
@@ -51,5 +47,9 @@ export class OfertaPage {
   homePage(){
    this.navCtrl.setRoot(HomePage);
  }
+
+ ofertaDetalhes(oferta: any){
+  this.navCtrl.push(OfertadetalhesPage,{dadosOferta: oferta});
+}
 
 }

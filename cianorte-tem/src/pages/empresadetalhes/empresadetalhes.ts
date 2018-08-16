@@ -27,7 +27,6 @@ export class EmpresadetalhesPage {
     public navParams: NavParams,
     public provider: OfertaProvider) {
       this.dadosEmpresa = this.navParams.get('dadosEmpresa');
-      // this.ofertas = this.provider.getAll();
   }
 
   ionViewDidLoad() {

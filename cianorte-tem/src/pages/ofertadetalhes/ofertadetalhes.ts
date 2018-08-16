@@ -12,9 +12,11 @@ import { Observable } from 'rxjs/Observable';
 export class OfertadetalhesPage {
   ofertas: Observable<any>;
 
+  dadosOferta: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
   	private provider: OfertaProvider) {
-      this.ofertas = this.provider.getAll();
+      this.dadosOferta = this.navParams.get('dadosOferta');
   }
 
   ionViewDidLoad() {
