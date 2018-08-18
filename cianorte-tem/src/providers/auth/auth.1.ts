@@ -16,10 +16,14 @@ export class AuthProvider {
    userProfile: any;
    fireAuth: any;   
 
-  constructor(public platform: Platform,/* public fb: Facebook, */public afAuth: AngularFireAuth, public afDB: AngularFireDatabase) {
-    this.userProfile = firebase.database().ref('/userProfile');  }
+  constructor(
+    public platform: Platform,/* public fb: Facebook, */
+    public afAuth: AngularFireAuth,
+    public afDB: AngularFireDatabase) {
+      this.userProfile = firebase.database().ref('/userProfile');
+    }
 
-  signupUser(email, password, firstName, lastName): any{
+  signupUser(email, password, firstName, lastName, perfil): any{
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password).then((newUser) => {
       return this.afAuth.auth.signInAndRetrieveDataWithEmailAndPassword(email, password).then((authenticatedUser) =>{
         let uid = authenticatedUser.user.uid;
@@ -30,7 +34,8 @@ export class AuthProvider {
           firstName: firstName,
           lastName: lastName,
           email: email,
-          photoURL: ""
+          photoURL: "",
+          perfil
         };
 
         newUser.user.updateProfile({

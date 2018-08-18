@@ -17,6 +17,9 @@
   <div class="login-container">
     <form padding [formGroup]="signupForm" (submit)="signup()" novalide>
       <ion-item>
+        <ion-input type="text" formControlName="perfil" placeholder="Perfil" clearInput clearOnEdit="false"></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-input type="text" formControlName="firstName" placeholder="Nome" clearInput clearOnEdit="false"></ion-input>
       </ion-item>
       <ion-item>

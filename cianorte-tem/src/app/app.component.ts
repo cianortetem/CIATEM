@@ -18,6 +18,10 @@ import { CadusuariosPage } from '../pages/auth/cadusuarios/cadusuarios';
 import { EmpresadetalhesPage } from '../pages/empresadetalhes/empresadetalhes';
 import { RotasPage } from '../pages/rotas/rotas';
 import { MapaPage } from '../pages/mapa/mapa';
+import { EmpresacadastrarPage } from '../pages/empresacadastrar/empresacadastrar';
+import { CadastrarusuarioPage } from '../pages/cadastrarusuario/cadastrarusuario';
+import { PerfilUsuarioPage } from '../pages/perfil-usuario/perfil-usuario';
+import { PerfilEmpresaPage } from '../pages/perfil-empresa/perfil-empresa';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +29,7 @@ import { MapaPage } from '../pages/mapa/mapa';
 export class cianortetem {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = EmpresacadastrarPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -35,7 +39,6 @@ export class cianortetem {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Empresas', component: EmpresasPage },
       { title: 'Ofertas', component: OfertaPage },
       { title: 'Fotos', component: FotosPage },
       { title: 'Sair', component: LoginPage},

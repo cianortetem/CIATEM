@@ -4,10 +4,11 @@ import { IonicApp, IonicErrorHandler, IonicModule, Img } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonMaskModule } from '@pluritech/ion-mask';
-import { Camera } from '@ionic-native/camera';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { DatePipe } from '@angular/common';
 import { IonicStorageModule } from '@ionic/storage';
+import { Geolocation } from '@ionic-native/geolocation';
 
 
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ firebase ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
@@ -42,20 +43,21 @@ import { EmpresadetalhesPage } from '../pages/empresadetalhes/empresadetalhes';
 import { RotasPage } from '../pages/rotas/rotas';
 import { MapaPage } from '../pages/mapa/mapa';
 import { OfertadetalhesPage } from '../pages/ofertadetalhes/ofertadetalhes';
+import { PerfilUsuarioPage } from '../pages/perfil-usuario/perfil-usuario';
+import { PerfilEmpresaPage } from '../pages/perfil-empresa/perfil-empresa';
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ providers ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriaProvider } from '../providers/categoria/categoria';
 import { EmpresaProvider } from '../providers/empresa/empresa';
 import { OfertaProvider } from '../providers/oferta/oferta';
-import { FotosProvider } from '../providers/fotos/fotos';
-
+// import { FotosProvider } from '../providers/fotos/fotos';
+import { AuthProvider } from '../providers/auth/auth.1';
+import { UsuarioPerfilProvider } from '../providers/usuario-perfil/usuario-perfil';
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ pipes ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriabuscaPipe } from '../pipes/categoriabusca/categoriabusca';
 import { OfertaPipe } from '../pipes/oferta/oferta';
 import { EmpresabuscaPipe } from '../pipes/empresabusca/empresabusca';
-import { AuthProvider } from '../providers/auth/auth.1';
-
-import { Geolocation } from '@ionic-native/geolocation';
 import { OfertabuscarPipe } from '../pipes/ofertabuscar/ofertabuscar';
+import { EmpresaPerfilProvider } from '../providers/empresa-perfil/empresa-perfil';
 
 @NgModule({
   declarations: [
@@ -79,7 +81,9 @@ import { OfertabuscarPipe } from '../pipes/ofertabuscar/ofertabuscar';
     EmpresabuscaPipe, 
     RotasPage,
     MapaPage,
-    OfertadetalhesPage
+    OfertadetalhesPage,
+    PerfilUsuarioPage,
+    PerfilEmpresaPage
    //CadusuariosPage
   ],
   imports: [
@@ -109,7 +113,9 @@ import { OfertabuscarPipe } from '../pipes/ofertabuscar/ofertabuscar';
     LoginusuariosPage,
     RotasPage,
     MapaPage,
-    OfertadetalhesPage
+    OfertadetalhesPage,
+    PerfilUsuarioPage,
+    PerfilEmpresaPage
     //CadusuariosPage
   ],
   providers: [
@@ -121,13 +127,15 @@ import { OfertabuscarPipe } from '../pipes/ofertabuscar/ofertabuscar';
       CategoriaProvider,
       EmpresaProvider,
       OfertaProvider,
-      FotosProvider,
+      // FotosProvider,
       Camera,
       AuthProvider,
       ImagePicker,
       DatePipe,
       AngularFireDatabase,
-      Geolocation
+      Geolocation,
+      UsuarioPerfilProvider,
+    EmpresaPerfilProvider
       //Facebook
   ]
 })

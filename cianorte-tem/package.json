@@ -21,7 +21,7 @@
     "@angular/http": "5.2.10",
     "@angular/platform-browser": "5.2.10",
     "@angular/platform-browser-dynamic": "5.2.10",
-    "@ionic-native/camera": "^4.7.0",
+    "@ionic-native/camera": "^4.12.0",
     "@ionic-native/core": "4.7.0",
     "@ionic-native/facebook": "^4.11.0",
     "@ionic-native/geolocation": "^4.11.0",
@@ -33,6 +33,7 @@
     "@pluritech/ion-mask": "^1.2.0",
     "angularfire2": "^5.0.0-rc.8.0",
     "cordova-android": "7.0.0",
+    "cordova-browser": "5.0.4",
     "cordova-plugin-camera": "^4.0.3",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-geolocation": "^4.0.1",
@@ -69,7 +70,8 @@
       }
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

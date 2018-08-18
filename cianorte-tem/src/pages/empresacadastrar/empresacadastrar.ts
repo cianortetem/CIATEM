@@ -28,13 +28,14 @@ export class EmpresacadastrarPage {s
   }
 
   private setupPageTitle() {
-    this.title = this.navParams.data.empresa ? 'Alterando empresa' : 'Cadastro da Empresa';
+    this.title = this.navParams.data.empresa ? 'Editando empresa' : 'Cadastro da Empresa';
   }
 
 
   createForm(){
   	this.form = this.formBuilder.group({
   		key:           [this.empresa.key],
+  		perfil:        [this.empresa.perfil],
       cnpj:          [this.empresa.cnpj, Validators.required],
       nomefantasia:  [this.empresa.nomefantasia, Validators.required],
       ramoatividade: [this.empresa.ramoatividade, Validators.required],
@@ -52,7 +53,7 @@ export class EmpresacadastrarPage {s
       horarioatend3: [this.empresa.horarioatend3],
       email:         [this.empresa.email, Validators.required],
       senha:         [this.empresa.senha, Validators.required],
-      tipoconta:     [this.empresa.tipoconta, Validators.required]
+      tipoconta:     [this.empresa.tipoconta]
  
   	});
   }
@@ -62,7 +63,7 @@ export class EmpresacadastrarPage {s
   		this.provider.save(this.form.value)
   		.then(() => {
   			this.toast.create({ message: 'Empresa cadastrada.', duration: 3000 }).present();
-  			this.navCtrl.pop();
+  			this.navCtrl.setRoot(HomePage);
   		})
   		.catch((e) => {
   			this.toast.create({ message: 'Erro ao salvar empresa.', duration: 3000 }).present();

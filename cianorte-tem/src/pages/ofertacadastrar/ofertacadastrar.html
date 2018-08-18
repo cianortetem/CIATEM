@@ -91,6 +91,11 @@
       <ion-card>
         <ion-card-content>
           <ion-item>
+            <ion-label stacked>Empresa</ion-label>
+            <ion-input type="text" formControlName="nomeempresa" value="Supermecado Royal" disabled></ion-input>
+          </ion-item>
+          
+          <ion-item>
             <ion-label stacked>Descrição</ion-label>
             <ion-input placeholder="Ex: Cerveja Brahma" type="text" formControlName="descricao"></ion-input>
           </ion-item>
@@ -109,7 +114,8 @@
             </div>
           </ion-item>
           <div id="imagem">
-            <img src="assets/imgs/logo.png"/>
+            <!-- <img *ngIf="img" src="{{photo}}"/> -->
+            <img src="{{ photo }}" />
           </div>
 
           <ion-item>
@@ -130,7 +136,7 @@
               </ion-item>
             </ion-col>
             <ion-col col-2>
-                <ion-buttons id="btnTirafoto">
+                <ion-buttons id="btnTirafoto" (click)="tirarFoto()">
                   <button ion-button icon-only outline color="secondary">
                     <ion-icon name="camera"></ion-icon>
                   </button>
@@ -181,3 +187,6 @@
       </ion-card>        
     </form>  
 </ion-content>
+<ion-footer padding>
+  <button ion-button large block (click)="takePicture()">Câmera</button>
+</ion-footer>

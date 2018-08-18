@@ -16,7 +16,7 @@ export class OfertaProvider {
 		 }
 
   getAll(){
-  	return this.db.list(this.PATH)
+  	return this.db.list(this.PATH, ref => ref.orderByChild('descricao'))
   		.snapshotChanges()
   		.map(changes => {
   			return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
@@ -36,6 +36,7 @@ export class OfertaProvider {
   		if (oferta.key) {
   			this.db.list(this.PATH)
   			.update(oferta.key, { 
+				  	nomeempresa: oferta.nomeempresa,
 				  	dataoferta: oferta.dataoferta,
 				  	obs: oferta.obs,
 					descricao: oferta.descricao,
@@ -49,6 +50,7 @@ export class OfertaProvider {
 			//inserindo dados
   			this.db.list(this.PATH)
   			.push({ 
+					nomeempresa: oferta.nomeempresa,
 					dataoferta: oferta.dataoferta,
 					obs: oferta.obs,
 					descricao: oferta.descricao,

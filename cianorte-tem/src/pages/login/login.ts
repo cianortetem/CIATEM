@@ -8,6 +8,7 @@ import { AngularFireAuth} from "angularfire2/auth";
 import { LoginusuariosPage } from '../auth/loginusuarios/loginusuarios';
 import { CadusuariosPage } from '../auth/cadusuarios/cadusuarios';
 import { EmpresacadastrarPage } from '../empresacadastrar/empresacadastrar';
+import { PerfilUsuarioPage } from '../perfil-usuario/perfil-usuario';
 
 @IonicPage()
 @Component({
@@ -31,7 +32,7 @@ export class LoginPage {
     try{
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       if(result){
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(HomePage, {usuario: user});
       }else{
         this.toastCtrl.create({
           message: 'Usuário ou senha inconrretos, tente novamente!',
@@ -41,10 +42,6 @@ export class LoginPage {
     }catch(e){
       console.log(e);
     }
-  }
-
-  paginaHome(){
-    this.navCtrl.setRoot(HomePage);
   }
 
   sair(){
@@ -125,18 +122,3 @@ export class LoginPage {
   }
 
 }
-
-// botao_clicado(msg){
-  // switch(itemSelecionado){
-  //   case 0:
-  //     break;
-  //   case 1:
-  //     break;
-  // }
-  // let alert = this.alertCtrl.create({
-  //   title: "Voce clicou em ",
-  //   subTitle: msg
-  // });
-  // alert.present()
-  
-// }

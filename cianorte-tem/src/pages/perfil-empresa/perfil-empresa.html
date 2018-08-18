@@ -1,0 +1,127 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <!-- <ion-buttons left>
+        <button ion-button icon-only color="royal" (click)="homePage()">
+          <ion-icon name="md-arrow-back"></ion-icon>
+        </button>
+      </ion-buttons> -->
+      <ion-title>Pefil da empresa</ion-title>
+      <ion-buttons start>
+          <button ion-button icon-only color="royal" (click)="ofertasPage()">
+            <ion-icon name="cart"></ion-icon>
+          </button>
+          <!-- <button ion-button icon-only color="royal" (click)="perfilPage(usuario)">
+            <ion-icon name="md-person"></ion-icon>
+          </button> -->
+          <button ion-button icon-only color="danger" (click)="homePage()">
+            <ion-icon name="md-power"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <ion-list *ngFor="let empresa of empresas | async ">
+    <ion-card>      
+      <img src="assets/imgs/enterpriseProfile.png">
+
+      
+      <button color="secondary" ion-button block (click)="editaEmpresa(empresa)">
+          Alterar dados
+        </button>
+    
+      <ion-item>
+        <h2>Nome da empresa</h2>
+        <p>{{empresa.nomefantasia}}</p>
+      </ion-item>
+    
+      <ion-item>
+        <h2>CNPJ</h2>
+        <p>{{empresa.cnpj}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>Endereço</h2>
+        <p>{{empresa.endereco}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>Número</h2>
+        <p>{{empresa.num}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>Bairro</h2>
+        <p>{{empresa.bairro}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>Cidade</h2>
+        <p>{{empresa.cidade}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>CEP</h2>
+        <p>{{empresa.cep}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>Telefone fixo</h2>
+        <p>{{empresa.fone1}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>Telefone fixo</h2>
+        <p>{{empresa.fone2}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>Whatsapp</h2>
+        <p>{{empresa.celular}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>E-mail</h2>
+        <p>{{empresa.email}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>Site</h2>
+        <p>{{empresa.siteempresa}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>Horário de atendimento</h2>
+        <p>{{empresa.horarioatend1}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>Horário de atendimento</h2>
+        <p>{{empresa.horarioatend2}}</p>
+      </ion-item>
+      
+      <ion-item>
+        <h2>Horário de atendimento</h2>
+        <p>{{empresa.horarioatend3}}</p>
+      </ion-item>  
+
+      <!-- <ion-item>
+        <button color="danger" ion-button block (click)="removeEmpresa()">
+          Excluir conta
+        </button>
+      </ion-item> -->
+      
+    </ion-card>
+  </ion-list>
+    <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="ofertasCadastrarPage()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+<ion-footer>
+  <!-- <ion-toolbar>        
+    <button color="danger" ion-button block (click)="remove()">
+      Excluir conta
+    </button>
+  </ion-toolbar> -->
+</ion-footer>

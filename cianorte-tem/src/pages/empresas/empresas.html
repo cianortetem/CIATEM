@@ -12,7 +12,7 @@
     <ion-item-sliding *ngFor="let empresa of empresas | async | empresabusca : terms ">
 
       <button ion-item (click)="empresasDetalhes(empresa)">
-        <ion-icon name="cart" item-start></ion-icon>
+        <!-- <ion-icon name="cart" item-start></ion-icon> -->
         <h1>{{ empresa.nomefantasia }}</h1>
       </button>
 
@@ -31,10 +31,8 @@
   </ion-list>
 
 </ion-content>
-<ion-footer>
-    <ion-toolbar>        
-      <!-- <img src="assets/imgs/bannerpromo.jpg">          -->
-    <!-- <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade"> -->
+<!-- <ion-footer>
+    <ion-toolbar> 
     <ion-slides pager="false" autoplay="3000" loop="true" speed="1000">
        
         <ion-slide>
@@ -42,7 +40,6 @@
             <ion-thumbnail item-start>
               <img src="http://padariabaraocecap.com.br/wp-content/uploads/2018/03/oferta2.jpg">
             </ion-thumbnail>
-            <!-- <h2>{{ ofertas.descricao }}df</h2> -->
             <p>Hayao Miyazaki • 1988</p>
             <button ion-button clear item-end (click)="ofertasPage()">Ver</button>
           </ion-item>
@@ -106,4 +103,4 @@
       </ion-slides>
   
     </ion-toolbar>
-  </ion-footer>
+  </ion-footer> -->

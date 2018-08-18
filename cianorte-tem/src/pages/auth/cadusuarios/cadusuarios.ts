@@ -30,7 +30,8 @@ export class CadusuariosPage {
       password: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(20), Validators.required])],
       passwordConfirmation: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(20), Validators.required])],
       firstName: ['', Validators.required],
-      lastName: ['', Validators.required]
+      lastName: ['', Validators.required],
+      perfil: ['']
         })
   }
 
@@ -40,30 +41,28 @@ export class CadusuariosPage {
     if (passwordErrado){
       const alert = this.alert.create({
         title: 'Ops!',
-        subTitle: 'Corrige ai mano a senha!',
+        subTitle: 'Senhas não conferem!',
         buttons: ['OK']
       });
       alert.present();
     } else {
       let loading = this.loading.create({
-        content: 'Criando Usuário...'
-      });
-      loading.present();
+        content: 'Criando cadastro...'
+      });loading.present();
 
-      let { email, password, firstName, lastName} = this.signupForm.value;
-      this.auth.signupUser( email, password, firstName, lastName).then(() =>{
+      let { email, password, firstName, lastName, perfil} = this.signupForm.value;
+      this.auth.signupUser( email, password, firstName, lastName, perfil).then(() =>{
         loading.dismiss();
         const alert = this.alert.create({
          title: 'Eba!',
-         subTitle: 'Deu certo mano!',
+         subTitle: 'Cadastro concluído!',
          buttons: ['OK']
-      });
-      alert.present();
+      });alert.present();
     }, (error) =>{
       loading.dismiss();
         const alert = this.alert.create({
          title: 'Ops!',
-         subTitle: 'Usuário não cadastrado!',
+         subTitle: 'Usuário não cadastrado! Certifique-se se todas informações estão corretas ou tente fazer login.',
          buttons: ['OK']
         });
         alert.present();
