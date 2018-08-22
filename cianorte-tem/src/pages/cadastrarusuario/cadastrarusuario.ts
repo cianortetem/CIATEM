@@ -111,7 +111,7 @@ export class CadastrarusuarioPage {
             this.auth.signupUser( email, password, firstName, lastName, perfil).then(() =>{
               loading.dismiss();
               let toast = this.toast.create({
-                message: 'Usuário ou senha inconrretos, tente novamente!',
+                message: 'Cadastro concluído!',
                 duration: 3000
               });toast.present();
               this.navCtrl.setRoot(HomePage)

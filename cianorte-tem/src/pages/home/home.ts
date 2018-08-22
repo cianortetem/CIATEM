@@ -56,7 +56,7 @@ export class HomePage {
     }
 
     loginPage(){
-    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.parent.parent.setRoot(LoginPage);
   }
 
   empresasPage(){

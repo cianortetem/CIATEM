@@ -22,6 +22,9 @@ import { EmpresacadastrarPage } from '../pages/empresacadastrar/empresacadastrar
 import { CadastrarusuarioPage } from '../pages/cadastrarusuario/cadastrarusuario';
 import { PerfilUsuarioPage } from '../pages/perfil-usuario/perfil-usuario';
 import { PerfilEmpresaPage } from '../pages/perfil-empresa/perfil-empresa';
+import { AbaUserPage } from '../pages/aba-user/aba-user';
+import { AbaEmpresaPage } from '../pages/aba-empresa/aba-empresa';
+import { AbaAdminPage } from '../pages/aba-admin/aba-admin';
 
 @Component({
   templateUrl: 'app.html'
@@ -29,7 +32,7 @@ import { PerfilEmpresaPage } from '../pages/perfil-empresa/perfil-empresa';
 export class cianortetem {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = EmpresacadastrarPage;
+  rootPage: any = AbaAdminPage;
 
   pages: Array<{title: string, component: any}>;
 

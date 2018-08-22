@@ -45,6 +45,7 @@ import { MapaPage } from '../pages/mapa/mapa';
 import { OfertadetalhesPage } from '../pages/ofertadetalhes/ofertadetalhes';
 import { PerfilUsuarioPage } from '../pages/perfil-usuario/perfil-usuario';
 import { PerfilEmpresaPage } from '../pages/perfil-empresa/perfil-empresa';
+import { AbaUserPage } from '../pages/aba-user/aba-user';
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ providers ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriaProvider } from '../providers/categoria/categoria';
 import { EmpresaProvider } from '../providers/empresa/empresa';
@@ -58,6 +59,8 @@ import { OfertaPipe } from '../pipes/oferta/oferta';
 import { EmpresabuscaPipe } from '../pipes/empresabusca/empresabusca';
 import { OfertabuscarPipe } from '../pipes/ofertabuscar/ofertabuscar';
 import { EmpresaPerfilProvider } from '../providers/empresa-perfil/empresa-perfil';
+import { AbaAdminPage } from '../pages/aba-admin/aba-admin';
+import { AbaEmpresaPage } from '../pages/aba-empresa/aba-empresa';
 
 @NgModule({
   declarations: [
@@ -83,8 +86,10 @@ import { EmpresaPerfilProvider } from '../providers/empresa-perfil/empresa-perfi
     MapaPage,
     OfertadetalhesPage,
     PerfilUsuarioPage,
-    PerfilEmpresaPage
-   //CadusuariosPage
+    PerfilEmpresaPage,
+    AbaUserPage,
+    AbaEmpresaPage,
+    AbaAdminPage
   ],
   imports: [
     BrowserModule,
@@ -115,8 +120,10 @@ import { EmpresaPerfilProvider } from '../providers/empresa-perfil/empresa-perfi
     MapaPage,
     OfertadetalhesPage,
     PerfilUsuarioPage,
-    PerfilEmpresaPage
-    //CadusuariosPage
+    PerfilEmpresaPage,
+    AbaUserPage,
+    AbaEmpresaPage,
+    AbaAdminPage
   ],
   providers: [
     StatusBar,
@@ -135,7 +142,7 @@ import { EmpresaPerfilProvider } from '../providers/empresa-perfil/empresa-perfi
       AngularFireDatabase,
       Geolocation,
       UsuarioPerfilProvider,
-    EmpresaPerfilProvider
+      EmpresaPerfilProvider
       //Facebook
   ]
 })
