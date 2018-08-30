@@ -10,7 +10,7 @@ export class UsuarioPerfilProvider {
 	private PATH = 'userProfile/';
 
   constructor(
-	  	private db: AngularFireDatabase,
+	  private db: AngularFireDatabase,
       private storage: Storage,
       private datepipe: DatePipe) { 
 

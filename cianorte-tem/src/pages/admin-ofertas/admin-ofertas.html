@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <ion-toolbar color="secondary">
+        <ion-searchbar placeholder="Pesquisar ofertas" [(ngModel)]="terms"></ion-searchbar>
+      </ion-toolbar>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let oferta of ofertas | async | ofertabuscar : terms ">
+       
+    <ion-card (click)="OfertasDetalhesPage(oferta)">
+      <ion-card-header id="cardHeader">
+        <ion-item>
+          <ion-card-title id="cardTitle">
+            <span item-start>{{ oferta.descricao }}</span>
+          </ion-card-title>
+          <ion-badge item-end color="danger">{{ oferta.preco }}</ion-badge>
+        </ion-item>
+      </ion-card-header>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/logo.png">
+        </ion-thumbnail> 
+          <p class="infoCenter" id="oferValidade">Oferta válida para {{ oferta.dataoferta }}</p>
+          <p class="infoCenter">{{ oferta.nomeempresa }}</p>
+          <p class="infoCenter" id="info">Mais informações...</p>
+        </ion-item> 
+      </ion-card>
+        
+      <ion-list>
+          <ion-item-sliding>
+            <ion-item color="light" text-center id="altExcluir">
+              <h2><- Alterar/Excluir -> </h2>
+            </ion-item>
+            <ion-item-options side="left">
+              <button ion-button (click)="editaOferta(oferta)" color="primary">
+                <ion-icon name="create"></ion-icon>
+                Editar
+              </button>
+            </ion-item-options>
+            <ion-item-options side="right">
+              <button ion-button color="danger" (click)="removeOferta(oferta.key)">
+                <ion-icon name="trash"></ion-icon>
+                Excluir
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="primary" (click)="novaOferta()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

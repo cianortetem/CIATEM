@@ -90,10 +90,10 @@
     <form [formGroup]="form">
       <ion-card>
         <ion-card-content>
-          <ion-item>
+          <!-- <ion-item>
             <ion-label stacked>Empresa</ion-label>
             <ion-input type="text" formControlName="nomeempresa" value="Supermecado Royal" disabled></ion-input>
-          </ion-item>
+          </ion-item> -->
           
           <ion-item>
             <ion-label stacked>Descrição</ion-label>
@@ -104,10 +104,8 @@
               O campo é obrigatório
             </div>
           </ion-item>
-          <ion-item>
-            <ion-label stacked>Data da oferta</ion-label>
-            <ion-input placeholder="Ex: 10/10/2018" type="text" formControlName="dataoferta"></ion-input>
-          </ion-item>
+          <ion-input-mask label="Data da oferta" typeInput="text" typeLabel="stacked" mask="00/00/0000" [dropSpecialCharacters]="false" formControlName="preco" formControlName="dataoferta" placeholder="Ex: 10/10/2018">
+          </ion-input-mask>
           <ion-item *ngIf="!form.controls.dataoferta.valid && (form.controls.dataoferta.dirty || form.controls.dataoferta.touched)" color="danger">
             <div [hidden]="!form.controls.dataoferta.errors.required">
               O campo é obrigatório
@@ -145,10 +143,8 @@
           </ion-row>
           <ion-row>
             <ion-col>
-              <ion-item>
-                <ion-label stacked>Preço</ion-label>
-                <ion-input placeholder="Ex: R$ 1.29" type="text" formControlName="preco"></ion-input>
-              </ion-item>
+              <ion-input-mask label="Preço" typeInput="text" typeLabel="stacked" mask="00.00" [dropSpecialCharacters]="false" formControlName="preco" placeholder="Ex: 10.99">
+              </ion-input-mask>
               <ion-item *ngIf="!form.controls.preco.valid && (form.controls.preco.dirty || form.controls.preco.touched)" color="danger">
                 <div [hidden]="!form.controls.preco.errors.required">
                   O campo é obrigatório

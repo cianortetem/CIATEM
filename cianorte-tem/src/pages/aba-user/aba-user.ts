@@ -14,7 +14,6 @@ export class AbaUserPage {
 
   home = HomePage;
   ofertas = OfertaPage;
-  perfil = PerfilUsuarioPage;
-  empresas = EmpresasPage;
+  perfil = PerfilUsuarioPage;  
 
 }

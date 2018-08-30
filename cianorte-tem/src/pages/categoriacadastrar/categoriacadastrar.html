@@ -11,7 +11,7 @@
 <ion-content padding>
     <form [formGroup]="form">
       <ion-item>
-        <ion-label floating>Nome da categoria</ion-label>
+        <ion-label stacked>Nome da categoria</ion-label>
         <ion-input type="text" formControlName="name"></ion-input>
       </ion-item>
       <ion-item *ngIf="!form.controls.name.valid && (form.controls.name.dirty || form.controls.name.touched)" color="danger">

@@ -9,10 +9,16 @@
 <ion-content>
 
   <ion-list no-lines>
-    <ion-item-sliding *ngFor="let empresa of empresas | async | empresabusca : terms ">
+    <ion-item>
+      <ion-badge>
+      <h3>Listando: {{ empresaCategoria.name }}</h3></ion-badge>
+    </ion-item>
+    
+    <ion-item-sliding *ngFor="let empresa of empresas | async | empresabusca : terms " >
 
       <button ion-item (click)="empresasDetalhes(empresa)">
         <!-- <ion-icon name="cart" item-start></ion-icon> -->
+        <!-- <h1  *ngIf="empresa.ramoatividade === 'Padaria'" hidden>{{ empresa.nomefantasia }}</h1> -->
         <h1>{{ empresa.nomefantasia }}</h1>
       </button>
 

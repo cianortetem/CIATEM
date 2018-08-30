@@ -24,7 +24,8 @@ export class AuthProvider {
     }
 
   signupUser(email, password, firstName, lastName, perfil): any{
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password).then((newUser) => {
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+    .then((newUser) => {
       return this.afAuth.auth.signInAndRetrieveDataWithEmailAndPassword(email, password).then((authenticatedUser) =>{
         let uid = authenticatedUser.user.uid;
         let userObject = {

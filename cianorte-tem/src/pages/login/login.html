@@ -15,7 +15,7 @@
 
     <ion-item class="campos" id="email">
       <ion-label stacked color="secondary">E-mail</ion-label>
-      <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+      <ion-input type="email" [(ngModel)]="user.email" id="emailk"></ion-input>
     </ion-item>
 
     <ion-item class="campos">
@@ -43,4 +43,14 @@
         <button class="btnLabel" ion-button clear color="secondary" (click)="reset_senha()">Esqueceu a senha?</button>
     </div> -->
   </ion-list>
+  <!-- <ion-list no-lines>
+    <ion-item-sliding *ngFor="let usuario of userProfile | async">
+ 
+      <button ion-item (click)="empresasPage()">
+        <h1>{{ usuario.name }}</h1>
+        <h1>{{ usuario.uid }}</h1>
+      </button>
+      
+    </ion-item-sliding>
+  </ion-list> -->
 </ion-content>

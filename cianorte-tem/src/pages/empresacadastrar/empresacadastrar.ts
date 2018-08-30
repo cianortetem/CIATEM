@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { EmpresaProvider } from './../../providers/empresa/empresa';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HomePage } from '../home/home';
+import { CategoriaProvider } from './../../providers/categoria/categoria';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
@@ -12,25 +14,29 @@ import { HomePage } from '../home/home';
 export class EmpresacadastrarPage {s
   title: string;
 	form: FormGroup;
-	empresa: any;
+  empresa: any;
+  empresaCategoria: any = {};
+
+  categorias: Observable<any>;
 
   constructor(
   	public navCtrl: NavController,
   	public navParams: NavParams,
   	private formBuilder: FormBuilder,
   	private provider: EmpresaProvider,
+    private providerCat: CategoriaProvider,
   	private toast: ToastController) {
+      this.categorias = this.providerCat.getAll();//provider categorias
+      this.empresaCategoria = this.navParams.data;
 
   	this.empresa = this.navParams.data.empresa || {};
   	this.createForm();
-
   	this.setupPageTitle();
   }
 
   private setupPageTitle() {
     this.title = this.navParams.data.empresa ? 'Editando empresa' : 'Cadastro da Empresa';
   }
-
 
   createForm(){
   	this.form = this.formBuilder.group({
@@ -63,7 +69,7 @@ export class EmpresacadastrarPage {s
   		this.provider.save(this.form.value)
   		.then(() => {
   			this.toast.create({ message: 'Empresa cadastrada.', duration: 3000 }).present();
-  			this.navCtrl.setRoot(HomePage);
+  			this.navCtrl.pop();
   		})
   		.catch((e) => {
   			this.toast.create({ message: 'Erro ao salvar empresa.', duration: 3000 }).present();

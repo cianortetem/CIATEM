@@ -42,7 +42,7 @@ export class CategoriacadastrarPage {
   	if (this.form.valid) {
   		this.provider.save(this.form.value)
   		.then(() => {
-  			this.toast.create({ message: 'Categoria cadastrada.', duration: 3000 }).present();
+  			this.toast.create({ message: 'Cadastro concluído!', duration: 3000 }).present();
   			this.navCtrl.pop();
   		})
   		.catch((e) => {

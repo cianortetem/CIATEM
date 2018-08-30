@@ -6,9 +6,13 @@ import { CadastrarusuarioPage } from '../cadastrarusuario/cadastrarusuario';
 import { User } from "../../models/users";
 import { AngularFireAuth} from "angularfire2/auth";
 import { LoginusuariosPage } from '../auth/loginusuarios/loginusuarios';
-import { CadusuariosPage } from '../auth/cadusuarios/cadusuarios';
 import { EmpresacadastrarPage } from '../empresacadastrar/empresacadastrar';
 import { PerfilUsuarioPage } from '../perfil-usuario/perfil-usuario';
+import { AbaUserPage } from '../aba-user/aba-user';
+import { AbaAdminPage } from '../aba-admin/aba-admin';
+import { AbaEmpresaPage } from '../aba-empresa/aba-empresa';
+import { UsuarioPerfilProvider } from '../../providers/usuario-perfil/usuario-perfil';
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
@@ -18,21 +22,25 @@ import { PerfilUsuarioPage } from '../perfil-usuario/perfil-usuario';
 export class LoginPage {
 
   user = {} as User;
+  userProfile: Observable<any>;
 
   constructor(
     private afAuth: AngularFireAuth,
     public navCtrl: NavController,
     public navParams: NavParams,
-    public alertCtrl: AlertController,
+    public alertCtrl: AlertController,    
+    private provider: UsuarioPerfilProvider,
     public toastCtrl: ToastController,
     public platform: Platform,
-    public actionsheetCtrl: ActionSheetController) { }
+    public actionsheetCtrl: ActionSheetController) { 
+      this.userProfile = this.provider.getAll();
+    }
 
   fazerLogin(user: User) {
     try{
       const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       if(result){
-        this.navCtrl.setRoot(HomePage, {usuario: user});
+        this.navCtrl.setRoot(AbaUserPage, {usuario: user});
       }else{
         this.toastCtrl.create({
           message: 'Usuário ou senha inconrretos, tente novamente!',
@@ -43,6 +51,19 @@ export class LoginPage {
       console.log(e);
     }
   }
+
+  // pegaIDuser(uid){
+  //   return new Promise((resolve, reject) =>{
+  //     var userRef = this.userProfile.child(uid);
+  //     this.user.once("value", function(snap){
+  //       var user = snap.val();
+  //       resolve(user);
+  //     },function(error){
+  //       reject(error);
+  //     })
+  //   })
+  // }
+  
 
   sair(){
     // this.afAuth.auth.signOut();
@@ -59,15 +80,6 @@ export class LoginPage {
 
   reset_senha(){
     this.navCtrl.push(ResetsenhaPage);
-  }
-
-  showAlert() {
-    let alert = this.alertCtrl.create({
-      title: 'Atenção',
-      subTitle: 'Não há nada para cancelar ainda!',
-      buttons: ['SAIR']
-    });
-    alert.present();
   }
 
   toastEntrar() {

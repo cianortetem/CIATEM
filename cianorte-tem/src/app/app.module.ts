@@ -38,7 +38,6 @@ import { OfertaPage } from '../pages/oferta/oferta';
 import { OfertacadastrarPage } from '../pages/ofertacadastrar/ofertacadastrar';
 import { FotosPage } from '../pages/fotos/fotos';
 import { LoginusuariosPage } from '../pages/auth/loginusuarios/loginusuarios';
-//import { CadusuariosPage } from '../pages/auth/cadusuarios/cadusuarios';
 import { EmpresadetalhesPage } from '../pages/empresadetalhes/empresadetalhes';
 import { RotasPage } from '../pages/rotas/rotas';
 import { MapaPage } from '../pages/mapa/mapa';
@@ -46,6 +45,9 @@ import { OfertadetalhesPage } from '../pages/ofertadetalhes/ofertadetalhes';
 import { PerfilUsuarioPage } from '../pages/perfil-usuario/perfil-usuario';
 import { PerfilEmpresaPage } from '../pages/perfil-empresa/perfil-empresa';
 import { AbaUserPage } from '../pages/aba-user/aba-user';
+import { AbaAdminPage } from '../pages/aba-admin/aba-admin';
+import { AbaEmpresaPage } from '../pages/aba-empresa/aba-empresa';
+import { AdminPage } from '../pages/admin/admin';
 // ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬ providers ¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
 import { CategoriaProvider } from '../providers/categoria/categoria';
 import { EmpresaProvider } from '../providers/empresa/empresa';
@@ -59,8 +61,8 @@ import { OfertaPipe } from '../pipes/oferta/oferta';
 import { EmpresabuscaPipe } from '../pipes/empresabusca/empresabusca';
 import { OfertabuscarPipe } from '../pipes/ofertabuscar/ofertabuscar';
 import { EmpresaPerfilProvider } from '../providers/empresa-perfil/empresa-perfil';
-import { AbaAdminPage } from '../pages/aba-admin/aba-admin';
-import { AbaEmpresaPage } from '../pages/aba-empresa/aba-empresa';
+import { AdminEmpresasPage } from '../pages/admin-empresas/admin-empresas';
+import { AdminOfertasPage } from '../pages/admin-ofertas/admin-ofertas';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,10 @@ import { AbaEmpresaPage } from '../pages/aba-empresa/aba-empresa';
     PerfilEmpresaPage,
     AbaUserPage,
     AbaEmpresaPage,
-    AbaAdminPage
+    AbaAdminPage,
+    AdminPage,
+    AdminEmpresasPage,
+    AdminOfertasPage
   ],
   imports: [
     BrowserModule,
@@ -99,6 +104,7 @@ import { AbaEmpresaPage } from '../pages/aba-empresa/aba-empresa';
     AngularFireAuthModule,
     IonMaskModule.forRoot(),
     IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot() 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -123,7 +129,10 @@ import { AbaEmpresaPage } from '../pages/aba-empresa/aba-empresa';
     PerfilEmpresaPage,
     AbaUserPage,
     AbaEmpresaPage,
-    AbaAdminPage
+    AbaAdminPage,
+    AdminPage,
+    AdminEmpresasPage,
+    AdminOfertasPage
   ],
   providers: [
     StatusBar,
@@ -142,7 +151,7 @@ import { AbaEmpresaPage } from '../pages/aba-empresa/aba-empresa';
       AngularFireDatabase,
       Geolocation,
       UsuarioPerfilProvider,
-      EmpresaPerfilProvider
+      EmpresaPerfilProvider,
       //Facebook
   ]
 })

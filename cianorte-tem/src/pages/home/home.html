@@ -1,4 +1,5 @@
 <ion-header>
+  <ion-navbar color="secondary">
   <ion-toolbar color="secondary" class="msg">
     <ion-title>CIANOTE-TEM</ion-title>
     <ion-buttons start>
@@ -7,18 +8,21 @@
         </button>
       </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar color="secondary" class="msg">
-    <ion-searchbar placeholder="Pesquisar categoria" [(ngModel)]="terms"></ion-searchbar>
-  </ion-toolbar>
+  </ion-navbar>
+
+    <ion-toolbar color="secondary" class="msg">
+      <ion-searchbar placeholder="Pesquisar categoria" [(ngModel)]="terms"></ion-searchbar>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="kkk">
+<ion-content class="kkk">
+ <!-- <p>{{ usuario.uid }}</p> -->
  <!-- <p>{{ usuario.email }}</p> -->
   <ion-list no-lines>
     <ion-item-sliding *ngFor="let categoria of categorias | async | categoriabusca : terms">
  
-      <button ion-item (click)="empresasPage()">
-        <!-- <ion-icon name="cart" item-start></ion-icon> -->
+      <button ion-item (click)="empresasCategoria(categoria)">
+        <ion-icon name="cart" item-start></ion-icon>
         <h1>{{ categoria.name }}</h1>
       </button>
       

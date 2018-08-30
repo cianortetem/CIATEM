@@ -3,7 +3,7 @@
     <name>Cianorte-Tem?</name>
     <description>TCC - Pós graduação - Faculdade Alpha.</description>
     <author email="cianorte.tem.app@gmail.com" href="http://ionicframework.com/">Vagner Augustinho - Robson Cominato</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.15.8:8101" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -89,6 +89,8 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="AIzaSyAorzheHUY_Qbs6v1bKPfF3pMGk7QVKfSM" />
     </plugin>
     <allow-navigation href="http://192.168.56.1:8101" />
+    <plugin name="cordova-sqlite-storage" spec="^2.4.0" />
+    <allow-navigation href="http://192.168.15.8:8101" />
     <engine name="android" spec="7.0.0" />
     <engine name="browser" spec="5.0.4" />
 </widget>

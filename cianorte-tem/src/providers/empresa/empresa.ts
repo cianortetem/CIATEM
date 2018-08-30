@@ -1,20 +1,44 @@
 import { Injectable} from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import * as firebase from 'firebase';
+
 
 
 @Injectable()
 export class EmpresaProvider {
 
+	seila: AngularFireList<any>;
+
+	public empresaCategoria: any;
+
 	private PATH = 'empresas/';
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase) {
+		this.seila = db.list('empresas');
+   }
 
+//   getAll(){
+//   	return this.db.list(this.PATH, ref => ref.orderByChild('ramoatividade').equalTo(this.empresaCategoria))
+//   		.snapshotChanges()
+//   		.map(changes => {
+//   			return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
+//   		})
+//   }
   getAll(){
   	return this.db.list(this.PATH, ref => ref.orderByChild('name'))
   		.snapshotChanges()
   		.map(changes => {
   			return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
   		})
+  }
+
+  getByQuery(orderby, equal) {
+    return this.db.list('foto', ref => ref.orderByChild(orderby).equalTo(equal)).snapshotChanges();
+  }
+
+
+  categoriadaEmpresa(ramoatividade, empresaCategoria){
+	return this.db.list('empresas', ref => ref.orderByChild('ramoatividade').equalTo(ramoatividade)).snapshotChanges();
   }
 
   get(key: string){

@@ -36,36 +36,20 @@ export class HomePage {
     // lista todas as categorias
     this.categorias = this.provider.getAll();
     }
-    // 
-    novaCategoria(){
-      this.navCtrl.push(CategoriacadastrarPage);
-    }
-    
-    editaCategoria(categoria: any){
-      this.navCtrl.push(CategoriacadastrarPage, { categoria: categoria });
-    }
 
-    removeCategoria(key: string){
-      this.provider.remove(key)
-      .then(() => {
-        this.toast.create({ message: 'Categoria removida!', duration: 3000 }).present();
-      })
-      .catch(() => {
-        this.toast.create({ message: 'Erro ao excluir categoria!', duration: 3000 }).present();
-      })
-    }
-
-    loginPage(){
-    this.navCtrl.parent.parent.setRoot(LoginPage);
+  // empresasCategoria(categoria: any){
+  //   this.navCtrl.push(EmpresasPage, {dadosCategoria: categoria});
+  // }
+  
+  empresasCategoria(obj){
+    this.navParams.data = obj;
+    this.navCtrl.push(EmpresasPage, this.navParams);
   }
-
-  empresasPage(){
-    this.navCtrl.push(EmpresasPage);
-  }
+  
   ofertasPage(){
     this.navCtrl.push(OfertaPage);
   }
-  
+
   perfilPage(usuario: any){
     this.navCtrl.push(PerfilUsuarioPage, {dadosUsuario: usuario});
   }
@@ -73,5 +57,8 @@ export class HomePage {
     this.navCtrl.push(PerfilEmpresaPage);
   }
 
+    loginPage(){
+    this.navCtrl.parent.parent.setRoot(LoginPage);
   }
 
+  }

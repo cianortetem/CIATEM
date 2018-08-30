@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-card>
+      <button ion-item (click)="HomePage()">
+        <ion-icon name="navigate" item-start color="secondary"></ion-icon>
+        <h1>Navegar</h1>
+      </button>
+    </ion-card>
+  
+    <ion-card>
+      <button ion-item (click)="CategoriaPage()">
+        <ion-icon name="md-list-box" item-start color="secondary"></ion-icon>
+        <h1>Categorias</h1>
+      </button>
+    </ion-card>
+  
+    <ion-card>
+      <button ion-item (click)="AdminEmpresasPage()">
+        <ion-icon name="cart" item-start></ion-icon>
+        <h1>Empresas</h1>
+      </button>
+    </ion-card>
+  
+    <ion-card>
+      <button ion-item (click)="AdminOfertasPage()">
+        <ion-icon name="basket" item-start></ion-icon>
+        <h1>Ofertas</h1>
+      </button>
+    </ion-card>
+  
+    <ion-card>
+      <button ion-item (click)="UsuariosPage()">
+        <ion-icon name="md-person" item-start></ion-icon>
+        <h1>Usuários</h1>
+      </button>
+    </ion-card>
+    
+  </ion-list>
+
+</ion-content>
+<ion-footer>
+  <button ion-button icon-end color="danger" block (click)="logoff()" id="btnLogoff">
+    Encerrar
+    <ion-icon name="md-power"></ion-icon>
+  </button>
+</ion-footer>

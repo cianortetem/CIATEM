@@ -1,0 +1,16 @@
+page-admin {
+    ion-footer{
+        padding: 0px;
+        height: 45px;
+        & #btnLogoff{
+            height: 100% !important;
+            margin: 0px;
+            padding: 0px;
+            border-radius: none !important;
+        }
+    }
+}
+.alert-md .alert-wrapper {
+    border-radius: 2px;
+    max-width: 300px;
+}
